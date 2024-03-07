@@ -1,0 +1,40 @@
+@media only screen and (max-width: 700px) {
+    .load  {
+    
+     width: 100% !important;
+     font-size: 10px  !important;
+    }
+    .benLoad {
+      border: 2px dashed #ccc !important;
+      padding: 20px !important;
+      min-height: 110px !important;
+      width: 50% !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      color: black !important;
+    }
+       
+  
+  }
+  .dzu-dropzone {
+    overflow: hidden !important;
+    border-radius: 10px;
+
+  }
+  .dzu-inputLabel{
+    color: white !important;
+  }
+  .dzu-previewFileName {
+    color: white !important;
+
+  }
+
+  .dzu-previewButton{
+    color: white !important;
+    background-color:  #C8B575;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  .dzu-submitButton{
+    background: linear-gradient(to right, #E79A3F, #C8B575);
+  }
