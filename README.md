@@ -1,4 +1,4 @@
-# DocumentReviewer App
+# AI Document Reviewer App
 
 Welcome to DocumentReviewer! This application is designed to streamline document review processes using a user-friendly interface.
 
