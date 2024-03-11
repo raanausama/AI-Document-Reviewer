@@ -21,7 +21,7 @@ function UploadDocument({token}) {
     <ResponsiveAppBar token={token}/>
       <Grid container mt={35} color={'white'} mb={25}>
         <Grid item xs={12}>
-          <Typography variant="h2" sx={{fontSize: '3.5rem'}}> AI Document Reviewer</Typography>
+          <Typography className="animate-character" variant="h2" sx={{fontSize: '3.5rem'}}> AI Document Reviewer</Typography>
         </Grid>
         {/* {!isSmallScreen &&
         <Grid item xs={12} mt={3}>

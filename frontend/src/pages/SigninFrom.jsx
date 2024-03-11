@@ -79,7 +79,7 @@ export default function SignInForm({navigate,dispatch}) {
               dispatch(setUser(JSON.parse(localStorage.getItem('loginUser'))));
               swal('Success', 'You are successfully Sign In', 'success').then(() => {
                 // Navigate to login page after registration
-                navigate('/getstarted'); // Redirect to login page
+                navigate('/review-document'); // Redirect to login page
               });
             } 
             else {
@@ -159,7 +159,7 @@ export default function SignInForm({navigate,dispatch}) {
                     <TextField
                       size="medium"
                       id="outlined-12"
-                      label="New Password"
+                      label="Password"
                       variant="outlined"
                       helperText={touched.password && errors.password}
                       required
