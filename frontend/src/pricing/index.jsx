@@ -74,18 +74,18 @@ export default function Pricing() {
           />
           <Cards
             title="BASIC"
-            backgroundColor="#C0C0C0"
+            backgroundColor="linear-gradient(to right, #c0c0c0,#939897 )"
             textColor="black"
             price="29€ / month"
             features={basicFeatures}
             buttonText="Try the Basic plan"
             titleText="Enhanced Document Review By AI"
-            ChipColor="#32A94C"
+            ChipColor="linear-gradient(to right, #32a94c,#46cd64 )"
             ChipTextColor="white"
           />
           <Cards
             title="PRO"
-            backgroundColor="#FFCF87"
+            backgroundColor="linear-gradient(to right, #E79A3F, #C8B575)"
             textColor="black"
             price="50€ / month"
             features={proFeatures}

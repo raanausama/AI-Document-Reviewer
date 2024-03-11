@@ -26,7 +26,7 @@ const handleCheckEmailGoogleSingin = async (email, navigate, dispatch) => {
     // console.log("res", res.user)
     if (res.status === "ok") {
       dispatch(setUser(res.user));
-      navigate('/getstarted');
+      navigate('/review-document');
     } else {
       swal(
         "Oops...",

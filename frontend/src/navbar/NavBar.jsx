@@ -135,18 +135,19 @@ function ResponsiveAppBar({ token }) {
                   key={page}
                   onClick={handleCloseNavMenu}
                 >
-                  <Link
-                    to={`/${page.toLowerCase().replace(/\s/g, "-")}`}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <Typography
-                      textAlign="center"
-                      fontFamily="Aktiv"
-                      // sx={{ fontFamily: "TrajanPro3Black" }}
-                    >
+                  {page === "Logout" ? (
+                    // If the page is "Logout", render a link to handle logout
+                    <Typography onClick={handleLogout} textAlign="center" fontFamily="Aktiv">
                       {page}
                     </Typography>
-                  </Link>
+                  ) : (
+                    // Otherwise, render a Link component to the appropriate page
+                    <Link to={`/${page.toLowerCase().replace(/\s/g, "-")}`} style={{ textDecoration: "none", color: "inherit" }}>
+                      <Typography textAlign="center" fontFamily="Aktiv">
+                        {page}
+                      </Typography>
+                    </Link>
+                  )}
                 </MenuItem>
               ))}
             </Menu>
