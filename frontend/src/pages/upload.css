@@ -8,7 +8,7 @@
       border: 2px dashed #ccc !important;
       padding: 20px !important;
       min-height: 110px !important;
-      width: 50% !important;
+      width: 30% !important;
       text-align: center !important;
       cursor: pointer !important;
       color: black !important;
@@ -17,15 +17,19 @@
   
   }
   .dzu-dropzone {
+    border: 2px dashed #330404 !important;
     overflow: hidden !important;
     border-radius: 10px;
+    min-height: 140px !important;
+    background: linear-gradient(to right, #E79A3F, #C8B575);
+    /* width: 60% !important; */
 
   }
   .dzu-inputLabel{
-    color: white !important;
+    color: black !important;
   }
   .dzu-previewFileName {
-    color: white !important;
+    color: black !important;
 
   }
 
@@ -36,5 +40,5 @@
     padding: 2px;
   }
   .dzu-submitButton{
-    background: linear-gradient(to right, #E79A3F, #C8B575);
+    background:linear-gradient(to right, #110f25,#2A3055 );
   }
