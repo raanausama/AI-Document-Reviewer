@@ -1,46 +1,39 @@
 import CssBaseline from "@mui/material/CssBaseline";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material";
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { createTheme } from "@mui/material";
 import 'firebase/compat/auth';
 import { signInWithGoogle } from '../utils/firebase';
 import { setUser } from '../redux/user';
-
 import { LoadingButton } from "@mui/lab";
-import { Stack, IconButton, InputAdornment, Divider } from "@mui/material";
+import { Stack, IconButton, InputAdornment, Divider, useMediaQuery, useTheme } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
 import swal from "sweetalert";
 import * as Yup from "yup";
 import Iconify from "../components/Iconify";
 import { apiPost } from "../utils/axios";
+import logo  from '../assets/REV.png'
 
 // TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
 
 export default function SignInForm({navigate,dispatch}) {
 
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   // OTP Verification Modal
   // const [verficationModelOpen, setVerficationModalOpen] = useState(false);
   // const handleOpenVerficationModal = () => setVerficationModalOpen(true);
   // const handleCloseVerficationModal = () => setVerficationModalOpen(false);
-
-  const [verifyEmail, setVerifyEmail] = useState(false);
 
   const initialValues = {
     email: "",
@@ -66,7 +59,7 @@ export default function SignInForm({navigate,dispatch}) {
         console.log("values", values);
       
         try {
-          console.log("values submitted", values);
+          // console.log("values submitted", values);
           console.log(values)
           const res = await apiPost('login', {
             "email": values.email,
@@ -101,11 +94,25 @@ export default function SignInForm({navigate,dispatch}) {
         values,
       }) => (
         // <ThemeProvider theme={defaultTheme} >
-          <Container component="main" maxWidth="xs" sx={{}}>
+          <Container component="main" maxWidth="xs">
             <CssBaseline />
-            <Typography component="h1" variant="h5" fontWeight="bold" color='white' mt={5}>
+            {/* <Typography component="h1" variant="h5" fontWeight="bold" color='white' mt={5}>
                 DOCUMENT REVIEWER
-              </Typography>
+              </Typography> */}
+              <Box sx={{ flexGrow: 0.5, display: "flex", alignItems: 'center', justifyContent: 'center' }} mt={5}>
+                <a href="/">
+                  <img
+                    src={logo}
+                    alt="logo"
+                    Link="/"
+                    style={{
+                      height: isSmallScreen ? "8vh" : "8vh",
+                      width: isSmallScreen ? "25vh" : "25vh",
+                    }}
+                  />
+                </a>
+                {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
+              </Box>
             <Box
               sx={{
                 marginTop: 4,
@@ -122,6 +129,7 @@ export default function SignInForm({navigate,dispatch}) {
               {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
                 <LockOutlinedIcon />
               </Avatar> */}
+              
               <Typography component="h1" variant="h5">
                 Login
               </Typography>

@@ -80,7 +80,7 @@ export default function Pricing() {
             features={basicFeatures}
             buttonText="Try the Basic plan"
             titleText="Enhanced Document Review By AI"
-            ChipColor="linear-gradient(to right, #32a94c,#46cd64 )"
+            ChipColor="linear-gradient(to right, #008080,#3b6544)"
             ChipTextColor="white"
           />
           <Cards
