@@ -7,6 +7,7 @@ import { clearUser } from '../redux/user';
 import { Box, AppBar, Toolbar, IconButton,Button, Typography , Menu, Container, MenuItem, useMediaQuery, useTheme} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import gsap from "gsap";
+import logo  from '../assets/REV.png'
 // import SignIn from "../../pages/SignIn";
 
 // const pages = ["Home", "About", "Services", "AI Reviewer", "Contact"];
@@ -77,23 +78,19 @@ function ResponsiveAppBar({ token }) {
       <Container maxWidth="100%">
         <Toolbar disableGutters>
           {/* <AdbIcon  /> */}
-          <Box sx={{ flexGrow: 0.5, display: { xs: "flex" } }}>
-            {/* <a href="/">
+          <Box sx={{ flexGrow: 0.5, display: { xs: "flex" }, alignItems: 'center' }}>
+            <a href="/">
               <img
-                // src={mjrLogo}
+                src={logo}
                 alt="logo"
                 Link="/"
                 style={{
-                  height: isSmallScreen ? "8vh" : "15vh",
-                  width: isSmallScreen ? "15vh" : "25vh", // Default width
-                  // "@media (max-width: 600px)": {
-                  //   height: "2vh", // Adjust height for small screens
-                  //   width: "20vh", // Adjust width for small screens
-                  // },
+                  height: isSmallScreen ? "8vh" : "8vh",
+                  width: isSmallScreen ? "25vh" : "25vh",
                 }}
               />
-            </a> */}
-            <Typography variant="h4" >REVIEWER</Typography>
+            </a>
+            {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none"}, justifyContent: {  xs: "flex-end", md: "none" } }}>

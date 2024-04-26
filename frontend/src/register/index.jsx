@@ -14,13 +14,15 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 
 import { LoadingButton } from "@mui/lab";
-import { Autocomplete, IconButton, InputAdornment } from "@mui/material";
+import { IconButton, InputAdornment, useMediaQuery, useTheme  } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
 import swal from "sweetalert";
 import * as Yup from "yup";
 import Iconify from "../components/Iconify";
 import { apiPost } from "../utils/axios";
+import logo  from '../assets/REV.png'
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -31,13 +33,8 @@ export default function SignUp() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
-
-  // OTP Verification Modal
-  // const [verficationModelOpen, setVerficationModalOpen] = useState(false);
-  // const handleOpenVerficationModal = () => setVerficationModalOpen(true);
-  // const handleCloseVerficationModal = () => setVerficationModalOpen(false);
-
-  const [verifyEmail, setVerifyEmail] = useState(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const initialValues = {
     email: "",
@@ -66,7 +63,6 @@ export default function SignUp() {
         "Password does not match",
         (confirmPassword, allValue) => {
           const password = allValue.from[0].value.new_password;
-          // console.log("check password", password, confirmPassword, allValue);
           if (confirmPassword === password) {
             return true;
           }
@@ -82,7 +78,6 @@ export default function SignUp() {
         password: values.new_password,
       });
       swal("Success", "Admin created successfully", "success").then(() => {
-        // setVerficationModalOpen(false);
       });
     } catch (error) {
       console.log(error);
@@ -95,7 +90,7 @@ export default function SignUp() {
       text: 'You have successfully registered your account.',
     }).then(() => {
       // Navigate to the login page
-      navigate('/login'); // Update the path according to your route setup
+      navigate('/login'); 
     });
   };
 
@@ -108,33 +103,6 @@ export default function SignUp() {
       
         try {
           console.log("values submitted", values);
-          // const response = await apiPost("admin/login/validateAdmin", {
-          //   email: values.email,
-          //   // email: values.email,
-          // });
-
-          // const { email } = response.rows;
-          // if (email) {
-          //   swal(
-          //     "Oops...",
-          //     "Email Already exist!, Please choose a unique email",
-          //     "error"
-          //   ).then(() => {});
-          //   return;
-          // }
-
-          // setVerficationModalOpen(true);
-
-          // const resp = await apiPost('admin/signup', {
-          //   email: values.email,
-          //   // email: values.email,
-          //   password: values.new_password,
-          //   fullname: values.fullname,
-          //   contact: values.contact,
-          //   role: values.role,
-          //   commision: values.commision
-          // });
-          // swal('Success', 'Admin created successfully', 'success').then(() => { });
           console.log(values)
           const res = await apiPost(`signup`, {values: values})
             console.log('response', res);
@@ -174,9 +142,23 @@ export default function SignUp() {
         // <ThemeProvider theme={defaultTheme} >
           <Container component="main" maxWidth="xs" sx={{}}>
             <CssBaseline />
-            <Typography component="h1" variant="h5" fontWeight="bold" color='white' mt={5}>
+            {/* <Typography component="h1" variant="h5" fontWeight="bold" color='white' mt={5}>
                 DOCUMENT REVIEWER
-              </Typography>
+              </Typography> */}
+               <Box sx={{ flexGrow: 0.5, display: "flex", alignItems: 'center', justifyContent: 'center' }} mt={5}>
+                <a href="/">
+                  <img
+                    src={logo}
+                    alt="logo"
+                    Link="/"
+                    style={{
+                      height: isSmallScreen ? "8vh" : "8vh",
+                      width: isSmallScreen ? "25vh" : "25vh",
+                    }}
+                  />
+                </a>
+                {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
+              </Box>
             <Box
               sx={{
                 marginTop: 4,

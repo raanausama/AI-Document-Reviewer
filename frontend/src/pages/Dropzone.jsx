@@ -56,7 +56,7 @@ const UploaderDropzone = ({ name, setFiles, files,setDone,}) => {
         </>
       }
     //   inputWithFilesContent={(files) => `${3 - files.length} more`}
-      styles={{ minHeight: '150px !important', overFlow: 'auto' }}
+      styles={{   minHeight: '150px !important', overFlow: 'auto' }}
       
     />
   );

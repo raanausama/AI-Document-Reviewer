@@ -56,7 +56,7 @@ function UploadDocument({token}) {
           <UploaderDropzone setWords={setWords} words={words} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setDocumentText={setDocumentText} documentText={documentText} name="passport" setFiles={setFiles} files={files} setDone={setDone} token={token}/>
         </Grid>
       </Grid>
-      <Grid container mt={5} color={'white'} mb={25}>
+      <Grid container mt={5} color={'white'} mb={20}>
         {done === 1 && responses.length > 0 && (
           <Grid item xs={12} mt={3}>
             <Typography variant="h4">Responses:</Typography>
