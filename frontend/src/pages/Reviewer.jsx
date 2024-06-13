@@ -1,13 +1,13 @@
 // import background from "../assets/background.jpg";
-import { Typography, Grid, Container, Button, Stack,  useMediaQuery,useTheme } from "@mui/material";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Typography, Grid,Button, Stack,  useMediaQuery,useTheme } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 // import Badge from "@mui/material/Badge";
 
 function Reviewer() {
  
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const navigate = useNavigate();
 
   return (
     <>
@@ -22,11 +22,12 @@ function Reviewer() {
         } */}
         <Grid item  xs={12} sx={{display: 'flex', justifyContent:'center'}} mt={3}>
           <Stack  direction={{ xs: 'column', md: 'row' }} spacing={2}>
-            <Button  sx={{color:"white", fontWeight: 'bold'}}>Home </Button>
-            <Button  sx={{color:"white", fontWeight: 'bold'}}>About </Button>
-            <Button  sx={{color:"white", fontWeight: 'bold'}}>Services </Button>
-            <Button  sx={{color:"white", fontWeight: 'bold'}}>AI Reviewer </Button>
-            <Button  sx={{color:"white", fontWeight: 'bold'}}>Contact </Button>
+            {/* <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/')}>Home </Button> */}
+            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/what-is-reviewit')}>What is ReviewIT? </Button>
+            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/how-it-works')}>How it works? </Button>
+            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/pricing')}>Pricing </Button>
+            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/testimonial')}>Testimonial </Button>
+            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/faqs')}>Faqs </Button>
           </Stack>
         </Grid>
        
