@@ -72,7 +72,7 @@ button:focus-visible {
 
 
 .animate-character {
-  background-image: linear-gradient(-225deg, #2A3055 20%, white 100%);
+  background-image: linear-gradient(-225deg, #cc9d63 20%, #ffffff 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;

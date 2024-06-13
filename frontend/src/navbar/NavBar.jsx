@@ -60,7 +60,7 @@ function ResponsiveAppBar({ token }) {
 
   const [viewModalOpen, setViewModalOpen] = React.useState(false);
 
-  const pages = isSmallScreen ? ["Home", "About", "Services", "AI Reviewer", "Contact", token ? "Logout" : "Login", "Register"] : ["Home", "About", "Services", "AI Reviewer", "Contact"];
+  const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing", "Testimonials", "FAQ", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing", "Testimonials", "FAQ"];
 
   return (
     <AppBar
@@ -79,17 +79,17 @@ function ResponsiveAppBar({ token }) {
         <Toolbar disableGutters>
           {/* <AdbIcon  /> */}
           <Box sx={{ flexGrow: 0.5, display: { xs: "flex" }, alignItems: 'center' }}>
-            <a href="/">
+            <Link to="/">
               <img
                 src={logo}
                 alt="logo"
-                Link="/"
+                // Link="/"
                 style={{
                   height: isSmallScreen ? "8vh" : "8vh",
                   width: isSmallScreen ? "25vh" : "25vh",
                 }}
               />
-            </a>
+            </Link>
             {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
           </Box>
 

@@ -18,31 +18,28 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { Check, KeyboardArrowRight } from "@mui/icons-material";
 import Cards from "./Cards";
 
-export default function Pricing() {
+export default function Pricing({hide}) {
   const freeFeatures = [
-    { icon: <Check />, text: "AI-powered document review" },
-    { icon: <Check />, text: "Limited number of documents per month" },
-    { icon: <Check />, text: "Basic formatting suggestions" },
-    { icon: <Check />, text: "Email support" },
+    { icon: <Check />, text: "Single paper review" },
+    { icon: <Check />, text: "No subscription needed" },
+    { icon: <Check />, text: "Buy more as you need" },
   ];
 
   const basicFeatures = [
-    { icon: <Check />, text: "All features of FREE plan" },
-    { icon: <Check />, text: "AI-powered documents with more accuracy" },
-    { icon: <Check />, text: "Priority ammain support" },
-    { icon: <Check />, text: "Increased number of documents per month" },
+    { icon: <Check />, text: "10 paper review" },
+    { icon: <Check />, text: "No subscription Needed" },
+    { icon: <Check />, text: "Buy more as you need" },
   ];
 
   const proFeatures = [
-    { icon: <Check />, text: "All features of FREE plan" },
-    { icon: <Check />, text: "AI-powered documents with more accuracy" },
-    { icon: <Check />, text: "Priority ammain support" },
-    { icon: <Check />, text: "Increased number of documents per month" },
+    { icon: <Check />, text: "Unlimited paper review" },
+    { icon: <Check />, text: "Subscription needed" },
+    { icon: <Check />, text: "One time payment" },
   ];
   return (
     <>
       <Container maxWidth={false}>
-        <Grid container mt={10} spacing={2} mb={10}>
+        <Grid container mt={15} spacing={2} mb={10}>
           <Grid
             item
             xs={12}
@@ -50,7 +47,7 @@ export default function Pricing() {
             justifyContent="center"
             color="white"
           >
-            <Typography variant="h5">PRICING</Typography>
+            {hide === 'hide' ? null : <Typography variant="h5">PRICING</Typography>}
           </Grid>
           <Grid
             item
@@ -62,34 +59,34 @@ export default function Pricing() {
             <Typography variant="h3">Chose the Right Plan for You</Typography>
           </Grid>
           <Cards
-            title="FREE"
+            title="Pay as you go"
             backgroundColor="white"
             textColor="black"
-            price="0€ / month"
+            price="$6 / paper"
             features={freeFeatures}
-            buttonText="Continue with FREE"
+            buttonText="Pay"
             titleText="Basic Document Review By AI"
             ChipColor="transparent"
             ChipTextColor="black"
           />
           <Cards
-            title="BASIC"
+            title="Buy in bulk"
             backgroundColor="linear-gradient(to right, #c0c0c0,#939897 )"
             textColor="black"
-            price="29€ / month"
+            price="$27 / 10 papers"
             features={basicFeatures}
-            buttonText="Try the Basic plan"
+            buttonText="Pay"
             titleText="Enhanced Document Review By AI"
             ChipColor="linear-gradient(to right, #008080,#3b6544)"
             ChipTextColor="white"
           />
           <Cards
-            title="PRO"
+            title="Annual plan"
             backgroundColor="linear-gradient(to right, #E79A3F, #C8B575)"
             textColor="black"
-            price="50€ / month"
+            price="$97 / year"
             features={proFeatures}
-            buttonText="Try the PRO plan"
+            buttonText="Pay"
             titleText="Premium Document Review By AI"
             ChipColor="linear-gradient(to right, #110f25,#2A3055 )"
             ChipTextColor="white"

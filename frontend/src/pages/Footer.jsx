@@ -11,7 +11,8 @@ function Footer() {
 
   return (
     <>
-      <Grid container mt={5} color={'white'} mb={5} >
+    <Container>
+      <Grid container mt={3} color={'white'} mb={3} >
         <Grid item xs={12} md={6} sx={{ textAlign: { xs: 'center', md: 'start' }}} >
           <Typography variant="body1" > © Copyright All Rights Reserved</Typography>
         </Grid>
@@ -56,6 +57,7 @@ function Footer() {
         </Grid>
        
       </Grid>
+      </Container>
       
     </>
   );
