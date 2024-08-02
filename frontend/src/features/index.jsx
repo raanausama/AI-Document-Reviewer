@@ -11,7 +11,7 @@ export default function KeyFeatures() {
             <Typography variant='h5'>Features</Typography>
             </Grid>
             <Grid item xs={12} display='flex' justifyContent='center' color='white'>
-                <Typography variant='h3'>Key Features</Typography>
+                <Typography variant='h3' className="animate-character">Key Features</Typography>
             </Grid>
             <Grid item xs={12} md={6} color='white'>
                 <Card sx={{ minWidth: 275, background: '#A7BEF2' }}>

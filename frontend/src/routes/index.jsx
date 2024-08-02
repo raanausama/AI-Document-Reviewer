@@ -11,8 +11,8 @@ import Faqs from "../pages/Faqs";
 
 function Router() {
   // const navigate = useNavigate;
-  const user = useSelector((state) => state.user); // Access the entire user state
-  console.log("user", user.user);
+  const user = useSelector((state) => state?.user); // Access the entire user state
+  console.log("user", user?.user);
   //
   return (
     <>
@@ -47,10 +47,10 @@ function Router() {
           /> */}
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<LogIn />} />
-          <Route exact path="/what-is-reviewit" element={<WhatisreviewIT />} />
-          <Route exact path="how-it-works" element={<Howitworks/>}/>
-          <Route exact path="pricing" element={<Price/>}/>
-          <Route exact path="faq" element={<Faqs/>}/>
+          <Route exact path="/what-is-reviewit" element={<WhatisreviewIT token={user?.user?.token}/>} />
+          <Route exact path="/how-it-works" element={<Howitworks token={user?.user?.token}/>}/>
+          <Route exact path="/pricing" element={<Price token={user?.user?.token}/>}/>
+          <Route exact path="/faq" element={<Faqs token={user?.user?.token}/>}/>
         </Routes>
       </Routers>
     </>

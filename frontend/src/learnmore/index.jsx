@@ -14,7 +14,7 @@ function LearnMore() {
     <Container maxWidth={false}>
         <Grid container mt={20} color={'white'} mb={15}>
           <Grid item xs={12}>
-            <Typography variant="h2" sx={{fontSize: '3.5rem'}}> Efficient Document Review with AI</Typography>
+            <Typography variant="h2" className="animate-character" sx={{fontSize: '3.5rem'}}> Efficient Document Review with AI</Typography>
           </Grid>
           <Grid item  xs={12} sx={{display: 'flex', justifyContent:'center'}} mt={3}>
             <Stack direction='row' spacing={4}>
