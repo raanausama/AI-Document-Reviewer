@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 // import Badge from "@mui/material/Badge";
 
-function Reviewer() {
+function Reviewer({token}) {
  
   const theme = useTheme();
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ function Reviewer() {
     <>
       <Grid container mt={10} color={'white'} mb={10}>
         <Grid item xs={12}>
-          <Typography variant="h2" sx={{fontSize: '3.5rem'}}> REVIEWER</Typography>
+          <Typography variant="h2" className="animate-character" sx={{fontSize: '3.5rem'}}> REVIEWER</Typography>
         </Grid>
         {/* {!isSmallScreen &&
         <Grid item xs={12} mt={3}>

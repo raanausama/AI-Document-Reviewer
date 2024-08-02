@@ -2,11 +2,11 @@ import React from 'react'
 import ResponsiveAppBar from '../navbar/NavBar'
 import CommonQuestions from '../questions'
 
-const Faqs = () => {
+const Faqs = ({token}) => {
     const repo = 'faqs';
   return (
     <>
-    <ResponsiveAppBar/>
+    <ResponsiveAppBar token={token}/>
     <CommonQuestions repo={repo}/>
     </>
   )

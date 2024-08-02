@@ -56,7 +56,7 @@ export default function Pricing({hide}) {
             justifyContent="center"
             color="white"
           >
-            <Typography variant="h3">Chose the Right Plan for You</Typography>
+            <Typography className="animate-character" variant="h3">Chose the Right Plan for You</Typography>
           </Grid>
           <Cards
             title="Pay as you go"

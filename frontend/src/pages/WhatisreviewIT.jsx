@@ -13,7 +13,7 @@ function WhatisreviewIT({token}) {
 
   return (
     <>
-    <ResponsiveAppBar/>
+    <ResponsiveAppBar token={token}/>
     <Container>
       <Grid container mt={35} color={'white'} mb={25}>
       <Grid item xs={12}>

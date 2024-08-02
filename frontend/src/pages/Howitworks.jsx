@@ -14,7 +14,7 @@ function Howitworks({token}) {
 
   return (
     <>
-    <ResponsiveAppBar/>
+    <ResponsiveAppBar token={token}/>
     <Container>
       <Grid container sx={{mt: { xs: 15, sm: 15, md:35 }}} color={'white'} mb={25} display='flex' justifyContent='center'>
         <Grid item xs={12} mb={3}>

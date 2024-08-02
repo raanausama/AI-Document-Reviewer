@@ -34,7 +34,7 @@ const Home=({token})=> {
 
         <CommonQuestions/>
 
-        <Reviewer/>
+        <Reviewer token={token}/>
 
         <Divider sx={{ height: '0.001px',background: 'rgb(171,154,154)',width: '100%',}}/>
 

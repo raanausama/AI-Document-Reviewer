@@ -14,7 +14,7 @@ const UploaderDropzone = ({ name, setFiles, files,setDone,}) => {
     if (status === 'done') {
       if (name === "passport") {
         setFiles({ ...files, doc: file });
-        extractAndSaveData(file);
+        // extractAndSaveData(file);
 
       }
     }
@@ -38,7 +38,7 @@ const UploaderDropzone = ({ name, setFiles, files,setDone,}) => {
       // getUploadParams={getUploadParams}
       onChangeStatus={handleChangeStatus}
       accept="application/pdf"
-      maxSizeBytes={3000000}
+      maxSizeBytes={20 * 1024 * 1024}
       onSubmit={(files) => {
         saveFileUrlsToMyServer(files);
         // swal('Success', 'uploaded ', 'success');
@@ -56,7 +56,7 @@ const UploaderDropzone = ({ name, setFiles, files,setDone,}) => {
         </>
       }
     //   inputWithFilesContent={(files) => `${3 - files.length} more`}
-      styles={{   minHeight: '150px !important', overFlow: 'auto' }}
+      styles={{ minHeight: '150px !important', overFlow: 'auto' }}
       
     />
   );
