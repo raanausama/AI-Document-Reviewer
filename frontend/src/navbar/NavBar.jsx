@@ -60,7 +60,7 @@ function ResponsiveAppBar({ token }) {
 
   const [viewModalOpen, setViewModalOpen] = React.useState(false);
 
-  const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing", "Testimonials", "FAQ", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing", "Testimonials", "FAQ"];
+  const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing",  "FAQ", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing",  "FAQ"];
 
   return (
     <AppBar

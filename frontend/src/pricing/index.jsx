@@ -1,24 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef, useState }  from "react";
+import { useLocation } from 'react-router-dom';
 import {
   Grid,
-  Paper,
   Typography,
-  CardContent,
-  Card,
-  CardActions,
-  Button,
-  Stack,
-  Chip,
-  List,
-  ListItem,
-  Divider,
   Container,
 } from "@mui/material";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import { Check, KeyboardArrowRight } from "@mui/icons-material";
+import { Check } from "@mui/icons-material";
 import Cards from "./Cards";
+import { apiGet, apiPost } from "../utils/axios";
 
-export default function Pricing({hide}) {
+
+export default function Pricing({ hide }) {
   const freeFeatures = [
     { icon: <Check />, text: "Single paper review" },
     { icon: <Check />, text: "No subscription needed" },
@@ -36,6 +28,27 @@ export default function Pricing({hide}) {
     { icon: <Check />, text: "Subscription needed" },
     { icon: <Check />, text: "One time payment" },
   ];
+
+  const [chargeData, setChargeData] = useState(null);
+  const chardid = 'chg_TS01A0920241419Dp840708828'
+  const params = new URLSearchParams(location.search);
+    const tapId = params.get('tap_id');
+    console.log('[tapId]',tapId)
+
+  // useEffect(() => {
+  //   const fetchChargeDetails = async () => {
+  //     try {
+  //       const response = await apiGet(`payment/getCharge/${tapId}`);
+  //       setChargeData(response.data);
+  //       console.log(response)
+  //     } catch (error) {
+  //       console.log(error)
+  //     } 
+  //   };
+
+  //   fetchChargeDetails();
+  // }, []);
+
   return (
     <>
       <Container maxWidth={false}>
@@ -47,8 +60,37 @@ export default function Pricing({hide}) {
             justifyContent="center"
             color="white"
           >
-            {hide === 'hide' ? null : <Typography variant="h5">PRICING</Typography>}
+            {hide === "hide" ? null : (
+              <Typography variant="h5">PRICING</Typography>
+            )}
           </Grid>
+          {/* <Grid
+            item
+            xs={12}
+            display="flex"
+            justifyContent="center"
+            color="white"
+          >
+            <div>
+          <h1>Pay with BenefitPay</h1>
+          <div id="card-sdk-id" ref={cardSdkRef}></div>
+          <div>
+          <button onClick={handlePaymentSubmission} disabled={isSubmitting}>
+            {isSubmitting ? 'Submitting...' : 'Submit Payment'}
+          </button>
+          </div> */}
+          {/* <BenefitPayButton
+            amount="1000" // Amount in smallest currency unit (e.g., 1000 fils = 1 BHD)
+            currency="BHD" // Currency code
+            paymentIntentId="your_payment_intent_id" // The payment intent ID from your server
+            operator={{
+              publicKey: 'pk_test_ToQX5dtK83AiZNfjHu0kRmL9'
+            }}
+            onSuccess={handlePaymentSuccess}
+            onFailure={handlePaymentFailure}
+          /> */}
+        {/* </div> */}
+        {/* </Grid> */}
           <Grid
             item
             xs={12}
@@ -56,7 +98,9 @@ export default function Pricing({hide}) {
             justifyContent="center"
             color="white"
           >
-            <Typography className="animate-character" variant="h3">Chose the Right Plan for You</Typography>
+            <Typography className="animate-character" variant="h3">
+              Chose the Right Plan for You
+            </Typography>
           </Grid>
           <Cards
             title="Pay as you go"
@@ -68,6 +112,7 @@ export default function Pricing({hide}) {
             titleText="Basic Document Review By AI"
             ChipColor="transparent"
             ChipTextColor="black"
+            amount={6}
           />
           <Cards
             title="Buy in bulk"
@@ -79,6 +124,7 @@ export default function Pricing({hide}) {
             titleText="Enhanced Document Review By AI"
             ChipColor="linear-gradient(to right, #008080,#3b6544)"
             ChipTextColor="white"
+            amount={27}
           />
           <Cards
             title="Annual plan"
@@ -90,6 +136,7 @@ export default function Pricing({hide}) {
             titleText="Premium Document Review By AI"
             ChipColor="linear-gradient(to right, #110f25,#2A3055 )"
             ChipTextColor="white"
+            amount={97}
           />
         </Grid>
       </Container>

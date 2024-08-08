@@ -14,9 +14,11 @@ app.use(express.json({ limit: "50mb" }));
 
 const loginRouter = require("./routes/client/loginRoutes");
 const signupRouter = require("./routes/client/signupRoutes");
+const paymentRouter = require("./routes/payment/paymentRoutes.js");
 
 app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
+app.use("/payment", paymentRouter);
 
 
 const port = process.env.PORT || 5000;
