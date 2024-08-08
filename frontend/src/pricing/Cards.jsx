@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import {
   Grid,
   Card,
@@ -12,6 +12,7 @@ import {
   Stack,
 } from "@mui/material";
 import { KeyboardArrowRight } from "@mui/icons-material";
+import { apiPost } from "../utils/axios";
 
 const Cards = ({
   title,
@@ -23,7 +24,45 @@ const Cards = ({
   buttonText,
   ChipColor,
   ChipTextColor,
+  amount,
 }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handlePaymentSubmission = async () => {
+    setIsSubmitting(true);
+
+    const requestData = {
+      // token: token, // This should be a simple string
+      amount: amount,
+      currency: 'SAR',
+      customer: {
+        first_name: "test",
+        middle_name: "test",
+        last_name: "test",
+        email: "test@test.com",
+        phone: {
+          country_code: "965",
+          number: "51234567",
+        },
+      },
+    };
+  
+    // Ensure requestData does not include circular or non-serializable objects
+    console.log('Request data:', requestData);
+
+    try {
+      const res = await apiPost('payment', requestData);
+      console.log('Response:', res);
+      const paymentUrl = res.transaction.url;
+    
+      // Redirect the user to the payment page
+      window.location.href = paymentUrl;
+    } catch (error) {
+      console.error('Payment submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <Grid item xs={12} md={4} color="black">
       <Card
@@ -78,8 +117,10 @@ const Cards = ({
                       color: ChipTextColor === "white" ? "white" : "neutral",
                       background: ChipColor === "transparent" ? "" : ChipColor,
                     }}
+                    disabled={isSubmitting}
+                    onClick={handlePaymentSubmission}
                   >
-                    {buttonText}
+                    {isSubmitting ? 'Progress...' : 'Pay now'}
                   </Button>
                 </CardActions>
               </Stack>

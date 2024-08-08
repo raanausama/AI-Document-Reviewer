@@ -7,7 +7,7 @@ import { Stack, Typography } from '@mui/material';
 // import { getDroppedOrSelectedFiles } from 'html5-file-selector'
 /* eslint-disable */
 
-const UploaderDropzone = ({ name, setFiles, files,setDone,}) => {
+const UploaderDropzone = ({ name, setFiles, files, setDone}) => {
 
   const handleChangeStatus = ({ file  }, status,Files) => {
     console.log('status',status)

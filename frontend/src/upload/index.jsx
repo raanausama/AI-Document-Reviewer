@@ -1,11 +1,13 @@
 // import background from "../assets/background.jpg";
 import { useEffect, useState } from "react";
-import { Typography, Grid, Container, Button, Stack,  useMediaQuery,useTheme, CircularProgress } from "@mui/material";
+import { Typography, Grid, Container, Button, Stack,LinearProgress,  useMediaQuery,useTheme, CircularProgress } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ResponsiveAppBar from "../navbar/NavBar";
 import UploaderDropzone from "../pages/Dropzone";
 import ReactMarkdown from 'react-markdown';
 import axios from "axios";
+import LinearProgressWithLabel from '../utils/LinearProgressWithLabel'; // Import the component
+
 
 // import Badge from "@mui/material/Badge";
 
@@ -24,6 +26,8 @@ function UploadDocument({token}) {
   console.log('files',files)
   console.log('done',done)
   const [responses, setResponses] = useState([]); // State to store the responses
+  const [progress, setProgress] = useState(0); // State for progress
+
 
   const handleFileUpload = async () => {
     setLoading(true);
@@ -40,9 +44,13 @@ function UploadDocument({token}) {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
+          onUploadProgress: progressEvent => {
+            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            setProgress(percentCompleted);
+          }
         });
-        console.log('File uploaded successfully', response?.data?.Document_Review_Result);
-        setResponses(response?.data?.Document_Review_Result);
+        console.log('File uploaded successfully', response.data);
+        setResponses(response.data);
         setDone(true);
         setLoading(false);
       } catch (error) {
@@ -76,19 +84,20 @@ function UploadDocument({token}) {
       
       <Grid container mt={5} color={'white'} mb={20}>
       {loading && (
-          <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <CircularProgress />
+          <Grid item xs={12} >
+            <LinearProgressWithLabel value={progress} />
           </Grid>
         )}
-        {done && responses.length > 0 ? (
+        {done && responses?.length > 0 ? (
           <Grid item xs={12} mt={3}>
-            <Typography variant="h4">Responses:</Typography>
-            {responses.map((response, index) => (
-              <div key={index}>
-                <Typography variant="subtitle1"><strong>{JSON.stringify(response)}</strong></Typography>
+            {/* <Typography variant="h4">Responses:</Typography> */}
+            {/* {responses.map((response, index) => (
+              <div key={index}> */}
+              <div dangerouslySetInnerHTML={{ __html: responses }} />
+                {/* <Typography variant="subtitle1"><strong>{responses}</strong></Typography> */}
                 {/* <Typography variant="body1">{response}</Typography> */}
-              </div>
-            ))}
+              {/* </div>
+            ))} */}
           </Grid>
         ) : null }
       </Grid>
