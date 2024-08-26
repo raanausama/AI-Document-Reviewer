@@ -40,10 +40,7 @@ function UploadDocument({token}) {
       formData.append('points', 'Report');
       console.log('formData', formData,`${import.meta.env.VITE_APP_SERVER_API_URL}`);
       try {
-        const response = await axios.post(`${import.meta.env.VITE_APP_SERVER_API_URL}/rpr`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-          },
+        const response = await axios.post(`${import.meta.env.VITE_APP_SERVER_API_URL}/rpr`, formData,{
           onUploadProgress: progressEvent => {
             const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
             setProgress(percentCompleted);

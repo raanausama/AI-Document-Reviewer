@@ -26,8 +26,8 @@ function Reviewer({token}) {
             <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/what-is-reviewit')}>What is ReviewIT? </Button>
             <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/how-it-works')}>How it works? </Button>
             <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/pricing')}>Pricing </Button>
-            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/testimonial')}>Testimonial </Button>
-            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/faqs')}>Faqs </Button>
+            {/* <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/testimonial')}>Testimonial </Button> */}
+            <Button  sx={{color:"white", fontWeight: 'bold'}} onClick={() => navigate('/faq')}>Faqs </Button>
           </Stack>
         </Grid>
        

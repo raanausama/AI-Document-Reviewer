@@ -20,7 +20,6 @@ app.use("/login", loginRouter);
 app.use("/signup", signupRouter);
 app.use("/payment", paymentRouter);
 
-
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {

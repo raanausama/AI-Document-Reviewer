@@ -41,10 +41,10 @@ exports.payment = async (req, res) => {
         },
         source: { id: "src_all" },
         post: {
-          url: "http://localhost:3000/pricing",
+          url: `${process.env.VITE_APP_APP_CLIENT_URL}/pricing`,
         },
         redirect: {
-          url: "http://localhost:3000/pricing",
+          url: `${process.env.VITE_APP_APP_CLIENT_URL}/pricing`,
         },
         // platform: {
         //   id: 'commerce_platform_opiJ423***14JK8M474'
