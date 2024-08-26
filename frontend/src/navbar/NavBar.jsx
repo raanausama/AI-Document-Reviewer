@@ -10,19 +10,11 @@ import gsap from "gsap";
 import logo  from '../assets/REV.png'
 // import SignIn from "../../pages/SignIn";
 
-// const pages = ["Home", "About", "Services", "AI Reviewer", "Contact"];
-const settings = [
-  "Dine In",
-  "CSR",
-  // "Blog",
-  "Contact Us",
-];
 
 function ResponsiveAppBar({ token }) {
   const dispatch = useDispatch();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -39,17 +31,11 @@ function ResponsiveAppBar({ token }) {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
   const onEnter = ({ currentTarget }) => {
     gsap.to(currentTarget, { scale: 1.2 });
   };
@@ -57,8 +43,6 @@ function ResponsiveAppBar({ token }) {
   const onLeave = ({ currentTarget }) => {
     gsap.to(currentTarget, { scale: 1 });
   };
-
-  const [viewModalOpen, setViewModalOpen] = React.useState(false);
 
   const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing",  "FAQ", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing",  "FAQ"];
 
@@ -70,7 +54,7 @@ function ResponsiveAppBar({ token }) {
         boxShadow: "none",
         borderBottom: "0.1px solid #ab9a9a" ,
         background: 'transparent',
-        mt:2
+        mt:2,
 
       }}
     >
@@ -102,7 +86,7 @@ function ResponsiveAppBar({ token }) {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon sx={{ color: "white", fontWeight: "bold" }} />
+              <MenuIcon sx={{ color: "black", fontWeight: "bold" }} />
 
             </IconButton>
             <Menu
@@ -113,7 +97,7 @@ function ResponsiveAppBar({ token }) {
                 horizontal: "left",
               }}
               PaperProps={{
-                sx: { backgroundColor: "transparent", color: "white" },
+                sx: { backgroundColor: "transparent", color: "black" },
               }}
               keepMounted
               transformOrigin={{
@@ -128,7 +112,7 @@ function ResponsiveAppBar({ token }) {
             >
               {pages.map((page) => (
                 <MenuItem
-                  style={{ background: "#2A3055" }}
+                  style={{ background: "white" }}
                   key={page}
                   onClick={handleCloseNavMenu}
                 >
@@ -159,7 +143,7 @@ function ResponsiveAppBar({ token }) {
                 onClick={handleCloseNavMenu}
                 sx={{
                   
-                  color: "white",
+                  color: "black",
                   display: "block",
                   fontSize: "1rem",
                   fontWeight: "Bold",
@@ -179,7 +163,7 @@ function ResponsiveAppBar({ token }) {
           <Box sx={{marginRight: 4}}>
             <Button sx={{
                   my: 2,
-                  color: "white",
+                  color: "black",
                   display: "block",
                   fontSize: "1rem",
                   fontWeight: "Bold",

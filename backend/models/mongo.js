@@ -1,12 +1,13 @@
 const mongoose = require("mongoose");
+console.log(process.env.MONGODB);
 
 mongoose
   .connect(process.env.MONGODB)
   .then(() => {
     console.log("mongodb connected");
   })
-  .catch(() => {
-    console.log("failed");
+  .catch((err) => {
+    console.error("Connection failed:", err.message);
   });
 
 const newSchema = new mongoose.Schema({

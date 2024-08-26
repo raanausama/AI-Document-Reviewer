@@ -13,7 +13,7 @@ function Homepage({token}) {
   return (
     <>
       <Container>
-        <Grid container mt={35} color={'white'} mb={25}>
+        <Grid container mt={35} color={'black'} mb={25}>
           <Grid item xs={12}>
               <Typography className="animate-character" variant="h2" sx={{fontSize: '3.7rem'}} mt={2}> ReviewIT</Typography>
             </Grid>
