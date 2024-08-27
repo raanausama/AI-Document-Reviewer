@@ -16,9 +16,10 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-/* a:hover {
-  color: #535bf2;
-} */
+
+a:hover {
+  color: #BC9D6E;
+}
 
 body {
   margin: 0;
@@ -54,11 +55,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-
-
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    /* background-image: linear-gradient(to right, #9747FF, #684DFF); */
+     /* background-image: linear-gradient(to right, #E79A3F,#C8B575 ); */
+     background-image: linear-gradient(to right, #110f25,#2A3055 );
+     /* background: rgb(64,60,103); */
+     /* background: rgb(167,165,185); */
+  }
+  /* a:hover {
+    color: #747bff;
+  } */
+  button {
+    background-color: #f9f9f9;
+  }
+}
 
 .animate-character {
-  background-image: linear-gradient(-225deg, #a87b4c 20%, #000000 100%);
+  background-image: linear-gradient(-225deg, #a87b4c 20%, #212223 100%);
+
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;

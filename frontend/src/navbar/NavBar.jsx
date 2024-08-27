@@ -157,7 +157,7 @@ function ResponsiveAppBar({ token }) {
                 onClick={handleCloseNavMenu}
                 sx={{
                   
-                  color: "black",
+                  color: "#212223",
                   display: "block",
                   fontSize: "1rem",
                   fontWeight: "Bold",
@@ -177,7 +177,7 @@ function ResponsiveAppBar({ token }) {
           <Box sx={{marginRight: 4}}>
             <Button sx={{
                   my: 2,
-                  color: "black",
+                  color: "#212223",
                   display: "block",
                   fontSize: "1rem",
                   fontWeight: "Bold",
@@ -194,11 +194,12 @@ function ResponsiveAppBar({ token }) {
 
           <Box>
             <Button sx={{
+              
                   color: "white",
                   display: "block",
                   fontSize: "1rem",
                   fontWeight: "Bold",
-                  background: "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)",
+                  background: "linear-gradient(to right, #a87b4c, #bc9d6e)",
                   textTransform: 'none',
                                 }}
                 onMouseEnter={onEnter}
