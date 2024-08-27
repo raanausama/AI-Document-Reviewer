@@ -25,6 +25,17 @@ import logo  from '../assets/REV.png'
 
 export default function SignInForm({navigate,dispatch}) {
 
+
+  const headerStyle = {
+    fontFamily: 'Cinzel, serif', // Use a fancy font like 'Cinzel'
+    fontWeight: 'bold',
+    fontSize: '2.4rem', // Adjust the size as needed
+    background: 'linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)', // Gradient color
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+  };
+
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const theme = useTheme();
@@ -101,7 +112,7 @@ export default function SignInForm({navigate,dispatch}) {
               </Typography> */}
               <Box sx={{ flexGrow: 0.5, display: "flex", alignItems: 'center', justifyContent: 'center' }} mt={5}>
                 <a href="/">
-                  <img
+                  {/* <img
                     src={logo}
                     alt="logo"
                     Link="/"
@@ -109,7 +120,8 @@ export default function SignInForm({navigate,dispatch}) {
                       height: isSmallScreen ? "8vh" : "8vh",
                       width: isSmallScreen ? "25vh" : "25vh",
                     }}
-                  />
+                  /> */}
+                  <Typography style={headerStyle}>ReviewIT</Typography>
                 </a>
                 {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
               </Box>
@@ -209,7 +221,7 @@ export default function SignInForm({navigate,dispatch}) {
                 variant="contained"
                 loading={isSubmitting}
                 onClick={handleSubmit}
-                sx={{ borderRadius: '30px', mt: 3, mb: 2, background: "linear-gradient(to right, #E79A3F, #C8B575)",  }}
+                sx={{ borderRadius: '30px', mt: 3, mb: 2, background: "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)",  }}
               >
               Login
             </LoadingButton>

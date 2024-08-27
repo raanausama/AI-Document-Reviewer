@@ -11,7 +11,7 @@
       width: 30% !important;
       text-align: center !important;
       cursor: pointer !important;
-      color: black !important;
+      color: white !important;
     }    
   }
   .dzu-dropzone {
@@ -19,26 +19,26 @@
     overflow: hidden !important;
     border-radius: 10px;
     min-height: 170px !important;
-    background: linear-gradient(to right, #E79A3F, #C8B575);
+    background: linear-gradient(to right, #88775d, #212223);
     max-width: 35vw !important;
     min-width: 40vw;
   }
   .dzu-inputLabel{
-    color: black !important;
+    color: white !important;
   }
   .dzu-previewFileName {
-    color: black !important;
+    color: white !important;
 
   }
 
   .dzu-previewButton{
     color: white !important;
-    background-color:  #C8B575;
+    background-color: white;
     border-radius: 5px;
-    padding: 2px;
+    padding: 5px !important;
   }
   .dzu-submitButton{
-    background:linear-gradient(to right, #110f25,#2A3055 );
+    background:linear-gradient(to right, #bc9d6e,#bc9d6e);
   }
   @media only screen and (max-device-width: 480px) {
     .dzu-dropzone{
