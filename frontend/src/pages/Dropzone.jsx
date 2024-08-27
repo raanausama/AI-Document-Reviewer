@@ -7,29 +7,62 @@ import { Stack, Typography } from '@mui/material';
 // import { getDroppedOrSelectedFiles } from 'html5-file-selector'
 /* eslint-disable */
 
-const UploaderDropzone = ({ name, setFiles, files, setDone}) => {
+const UploaderDropzone = ({ name, setFiles, files, setDone, handleFileUpload}) => {
 
-  const handleChangeStatus = ({ file  }, status,Files) => {
-    console.log('status',status)
+  // const handleChangeStatus = ({ file  }, status,Files) => {
+  //   console.log('status',status)
+  //   if (status === 'done') {
+  //     if (name === "passport") {
+  //       setFiles({ ...files, doc: file });
+  //       // extractAndSaveData(file);
+
+  //     }
+  //   }
+  //   else if (status === "removed") {
+  //     if (name === "passport") {
+  //       setFiles({ ...files, doc: {} });
+  //       setDone(0);
+  //     }
+  //   }
+  // };
+  const handleChangeStatus = ({ file }, status) => {
+    console.log('status', status);
     if (status === 'done') {
       if (name === "passport") {
-        setFiles({ ...files, doc: file });
-        // extractAndSaveData(file);
-
+        setFiles(prevFiles => ({ ...prevFiles, doc: file }));
       }
-    }
-    else if (status === "removed") {
+    } else if (status === "removed") {
       if (name === "passport") {
-        setFiles({ ...files, doc: {} });
+        setFiles(prevFiles => ({ ...prevFiles, doc: {} }));
         setDone(0);
       }
     }
   };
 
-
   function saveFileUrlsToMyServer(submittedFiles) {
     setFiles({ ...files, doc: submittedFiles });
     setDone(1);
+  //   swal({
+  //     title: "File Ready to Upload",
+  //     text: "Do you want to upload the file now?",
+  //     icon: "warning",
+  //     buttons: true,
+  //     dangerMode: true,
+  // }).then((willUpload) => {
+  //     if (willUpload) {
+  //         // If user confirms, trigger file upload
+  //         setTimeout(() => {
+  //           handleFileUpload();
+  //         }, 1000)
+          
+  //     } else {
+  //         // Handle the case where the user cancels the upload
+  //         console.log('User canceled the upload.');
+  //     }
+  // });
+
+
+    // handleFileUpload();
   }
 
   return (
@@ -41,6 +74,7 @@ const UploaderDropzone = ({ name, setFiles, files, setDone}) => {
       maxSizeBytes={20 * 1024 * 1024}
       onSubmit={(files) => {
         saveFileUrlsToMyServer(files);
+         
         // swal('Success', 'uploaded ', 'success');
       }}
       maxFiles={1}

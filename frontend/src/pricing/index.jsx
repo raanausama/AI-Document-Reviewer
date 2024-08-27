@@ -58,7 +58,7 @@ export default function Pricing({ hide }) {
             xs={12}
             display="flex"
             justifyContent="center"
-            color="white"
+            color="black"
           >
             {hide === "hide" ? null : (
               <Typography variant="h5">PRICING</Typography>

@@ -12,7 +12,7 @@ function Footer() {
   return (
     <>
     <Container>
-      <Grid container mt={3} color={'white'} mb={3} >
+      <Grid container mt={3} color={'black'} mb={3} >
         <Grid item xs={12} md={6} sx={{ textAlign: { xs: 'center', md: 'start' }}} >
           <Typography variant="body1" > © Copyright All Rights Reserved</Typography>
         </Grid>
@@ -24,33 +24,33 @@ function Footer() {
         <Grid item  xs={12} md={6} sx={{display: 'flex', justifyContent:{xs:'center', md:'flex-end'}, color:'white' }}>
           <Stack  direction='row' spacing={2}>
           <Link
-              sx={{ color: "white" }}
+              sx={{ color: "black" }}
             //   href="https://www.facebook.com/MjSkiResort"
               rel="sponsored"
               title="Instagram"
             >
               <IconButton>
-                <Instagram sx={{ color: 'white' }}/>
+                <Instagram sx={{ color: 'black' }}/>
               </IconButton>
             </Link>{" "}
             <Link
-              sx={{ color: "white" }}
+              sx={{ color: "black" }}
             //   href="https://twitter.com/Mjskiresort"
               rel="sponsored"
               title="Twitter"
             >
              <IconButton>
-                <Twitter sx={{ color: 'white' }}/>
+                <Twitter sx={{ color: 'black' }}/>
               </IconButton>
             </Link>{" "}
             <Link
-              sx={{ color: "white" }}
+              sx={{ color: "black" }}
             //   href="https://www.linkedin.com/company/malam-jabba-ski-resort/?viewAsMember=true"
               rel="sponsored"
               title="Facebook"
             >
               <IconButton>
-                <FacebookOutlined sx={{ color: 'white' }}/>
+                <FacebookOutlined sx={{ color: 'black' }}/>
               </IconButton>
             </Link>{" "}
           </Stack>

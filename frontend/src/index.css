@@ -4,7 +4,7 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #f9f9f9 !important;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,9 +16,9 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
+/* a:hover {
   color: #535bf2;
-}
+} */
 
 body {
   margin: 0;
@@ -27,7 +27,7 @@ body {
   min-width: 100%;
   min-height: 100%;
   /* background-image: linear-gradient(to right, #110f25,#2A3055 ); */
-  background-color: #f9f9f9;
+  background-color: #f9f9f9 !important;
 }
 
 h1 {
@@ -46,34 +46,19 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: #141ba3;
-}
+} */
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    /* background-image: linear-gradient(to right, #9747FF, #684DFF); */
-     /* background-image: linear-gradient(to right, #E79A3F,#C8B575 ); */
-     background-image: linear-gradient(to right, #110f25,#2A3055 );
-     /* background: rgb(64,60,103); */
-     /* background: rgb(167,165,185); */
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
 
 
 .animate-character {
-  background-image: linear-gradient(-225deg, #cc9d63 20%, #ffffff 100%);
+  background-image: linear-gradient(-225deg, #a87b4c 20%, #000000 100%);
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
