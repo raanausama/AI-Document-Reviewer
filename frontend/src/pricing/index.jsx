@@ -1,14 +1,9 @@
-import React, { useEffect, useRef, useState }  from "react";
-import { useLocation } from 'react-router-dom';
-import {
-  Grid,
-  Typography,
-  Container,
-} from "@mui/material";
+import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Grid, Typography, Container } from "@mui/material";
 import { Check } from "@mui/icons-material";
 import Cards from "./Cards";
 import { apiGet, apiPost } from "../utils/axios";
-
 
 export default function Pricing({ hide }) {
   const freeFeatures = [
@@ -30,10 +25,10 @@ export default function Pricing({ hide }) {
   ];
 
   const [chargeData, setChargeData] = useState(null);
-  const chardid = 'chg_TS01A0920241419Dp840708828'
+  const chardid = "chg_TS01A0920241419Dp840708828";
   const params = new URLSearchParams(location.search);
-    const tapId = params.get('tap_id');
-    console.log('[tapId]',tapId)
+  const tapId = params.get("tap_id");
+  console.log("[tapId]", tapId);
 
   // useEffect(() => {
   //   const fetchChargeDetails = async () => {
@@ -43,7 +38,7 @@ export default function Pricing({ hide }) {
   //       console.log(response)
   //     } catch (error) {
   //       console.log(error)
-  //     } 
+  //     }
   //   };
 
   //   fetchChargeDetails();
@@ -89,8 +84,8 @@ export default function Pricing({ hide }) {
             onSuccess={handlePaymentSuccess}
             onFailure={handlePaymentFailure}
           /> */}
-        {/* </div> */}
-        {/* </Grid> */}
+          {/* </div> */}
+          {/* </Grid> */}
           <Grid
             item
             xs={12}
@@ -104,8 +99,8 @@ export default function Pricing({ hide }) {
           </Grid>
           <Cards
             title="Pay as you go"
-            backgroundColor="white"
-            textColor="black"
+            backgroundColor="linear-gradient(to right, #cbbaa8, #e9e9e9)" // Nude to Pewter gradient
+            textColor="#212223" // Charcoal text color
             price="$6 / paper"
             features={freeFeatures}
             buttonText="Pay"
@@ -116,25 +111,25 @@ export default function Pricing({ hide }) {
           />
           <Cards
             title="Buy in bulk"
-            backgroundColor="linear-gradient(to right, #c0c0c0,#939897 )"
-            textColor="black"
+            backgroundColor="linear-gradient(to right, #e9e9e9, #bc9d6e)" // Pewter to Tan gradient
+            textColor="#212223" // Charcoal text color
             price="$27 / 10 papers"
             features={basicFeatures}
             buttonText="Pay"
             titleText="Enhanced Document Review By AI"
-            ChipColor="linear-gradient(to right, #008080,#3b6544)"
+            ChipColor="linear-gradient(to right, #008080,#3b6544)" // A strong contrast gradient for the chip
             ChipTextColor="white"
             amount={27}
           />
           <Cards
             title="Annual plan"
-            backgroundColor="linear-gradient(to right, #E79A3F, #C8B575)"
-            textColor="black"
+            backgroundColor="linear-gradient(to right, #bc9d6e, #e6e5e4)" // Tan to Charcoal gradient
+            textColor="#e9e9e9" // Pewter text color for better contrast
             price="$97 / year"
             features={proFeatures}
             buttonText="Pay"
             titleText="Premium Document Review By AI"
-            ChipColor="linear-gradient(to right, #110f25,#2A3055 )"
+            ChipColor="linear-gradient(to right, #110f25,#2A3055 )" // Dark, strong contrast gradient for the chip
             ChipTextColor="white"
             amount={97}
           />
@@ -143,3 +138,52 @@ export default function Pricing({ hide }) {
     </>
   );
 }
+
+{
+  /* <Grid item xs={12} sm={4}>
+            <Cards
+              title="Pay as you go"
+              backgroundColor="linear-gradient(to right, #cbbaa8, #e9e9e9)" // Nude to Pewter gradient
+              textColor="#212223" // Charcoal text color
+              price="$6 / paper"
+              features={freeFeatures}
+              buttonText="Pay"
+              titleText="Basic Document Review By AI"
+              ChipColor="transparent"
+              ChipTextColor="black"
+              amount={6}
+            />
+          </Grid> */
+}
+
+// {/* Buy in bulk card */}
+// <Grid item xs={12} sm={4}>
+//   <Cards
+//     title="Buy in bulk"
+//     backgroundColor="linear-gradient(to right, #e9e9e9, #bc9d6e)" // Pewter to Tan gradient
+//     textColor="#212223" // Charcoal text color
+//     price="$27 / 10 papers"
+//     features={basicFeatures}
+//     buttonText="Pay"
+//     titleText="Enhanced Document Review By AI"
+//     ChipColor="linear-gradient(to right, #008080,#3b6544)" // A strong contrast gradient for the chip
+//     ChipTextColor="white"
+//     amount={27}
+//   />
+// </Grid>
+
+// {/* Annual plan card */}
+// <Grid item xs={12} sm={4}>
+//   <Cards
+//     title="Annual plan"
+//     backgroundColor="linear-gradient(to right, #bc9d6e, #212223)" // Tan to Charcoal gradient
+//     textColor="#e9e9e9" // Pewter text color for better contrast
+//     price="$97 / year"
+//     features={proFeatures}
+//     buttonText="Pay"
+//     titleText="Premium Document Review By AI"
+//     ChipColor="linear-gradient(to right, #110f25,#2A3055 )" // Dark, strong contrast gradient for the chip
+//     ChipTextColor="white"
+//     amount={97}
+//   />
+// </Grid>
