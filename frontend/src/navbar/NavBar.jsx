@@ -50,7 +50,7 @@ function ResponsiveAppBar({ token }) {
   const headerStyle = {
     fontFamily: 'Cinzel, serif', // Use a fancy font like 'Cinzel'
     fontWeight: 'bold',
-    fontSize: '2.5rem', // Adjust the size as needed
+    fontSize: '2.4rem', // Adjust the size as needed
     background: 'linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)', // Gradient color
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
@@ -65,8 +65,6 @@ function ResponsiveAppBar({ token }) {
         boxShadow: "none",
         borderBottom: "0.1px solid #ab9a9a" ,
         background: 'transparent',
-        mt:2,
-
       }}
     >
       {/* <SignIn open={viewModalOpen} handleClose={handleCloseModal} /> */}

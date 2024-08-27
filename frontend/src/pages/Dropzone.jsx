@@ -7,7 +7,7 @@ import { Stack, Typography } from '@mui/material';
 // import { getDroppedOrSelectedFiles } from 'html5-file-selector'
 /* eslint-disable */
 
-const UploaderDropzone = ({ name, setFiles, files, setDone, handleFileUpload}) => {
+const UploaderDropzone = ({ name, setFiles, files, setDone, handleFileUpload, handleResponses}) => {
 
   // const handleChangeStatus = ({ file  }, status,Files) => {
   //   console.log('status',status)
@@ -33,8 +33,23 @@ const UploaderDropzone = ({ name, setFiles, files, setDone, handleFileUpload}) =
       }
     } else if (status === "removed") {
       if (name === "passport") {
-        setFiles(prevFiles => ({ ...prevFiles, doc: {} }));
-        setDone(0);
+          swal({
+            title: "Cancel Upload",
+            text: "Are You Sure?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          }).then((willUpload) => {
+              if (willUpload) {
+                setFiles(prevFiles => ({ ...prevFiles, doc: {} }));
+                setDone(0);
+                handleResponses();
+              } else {
+                  // Handle the case where the user cancels the upload
+                  console.log('User canceled the upload.');
+              }
+          });
+       
       }
     }
   };
@@ -81,7 +96,7 @@ const UploaderDropzone = ({ name, setFiles, files, setDone, handleFileUpload}) =
       // inputContent='Drag and Drop files here'
       inputContent={
         <>
-          <Stack textAlign='center' display='flex' alignItems='center' color='black'>
+          <Stack textAlign='center' display='flex' alignItems='center' color='white'>
             {/* <CloudUploadOutlinedIcon fontSize="large" /> */}            
             {/* <img width="64" height="64" src="https://img.icons8.com/external-bearicons-blue-bearicons/64/external-upload-call-to-action-bearicons-blue-bearicons.png" alt="external-upload-call-to-action-bearicons-blue-bearicons"/> */}
             <img width="80" height="80" src="https://img.icons8.com/bubbles/100/upload.png" alt="upload"/>
