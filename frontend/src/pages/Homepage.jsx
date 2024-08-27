@@ -121,7 +121,6 @@ function Homepage({ token }) {
                         "perspective(999px)  translate3d(0px, -4px, 5px)",
                       background: "#CBBAA8",
                     },
-                    color: "white",
                     width: { xs: "60%", sm: "40%", md: "45%", lg: "100%" },
                     height: {
                       xs: "1.5rem",
