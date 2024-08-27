@@ -8,6 +8,7 @@ import { Box, AppBar, Toolbar, IconButton,Button, Typography , Menu, Container, 
 import MenuIcon from "@mui/icons-material/Menu";
 import gsap from "gsap";
 import logo  from '../assets/REV.png'
+// import {styled} from '@mui/system';
 // import SignIn from "../../pages/SignIn";
 
 
@@ -46,6 +47,16 @@ function ResponsiveAppBar({ token }) {
 
   const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing",  "FAQ", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing",  "FAQ"];
 
+  const headerStyle = {
+    fontFamily: 'Cinzel, serif', // Use a fancy font like 'Cinzel'
+    fontWeight: 'bold',
+    fontSize: '2.5rem', // Adjust the size as needed
+    background: 'linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)', // Gradient color
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+  };
+
   return (
     <AppBar
       position="absolute"
@@ -63,8 +74,8 @@ function ResponsiveAppBar({ token }) {
         <Toolbar disableGutters>
           {/* <AdbIcon  /> */}
           <Box sx={{ flexGrow: 0.5, display: { xs: "flex" }, alignItems: 'center' }}>
-            <Link to="/">
-              <img
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              {/* <img
                 src={logo}
                 alt="logo"
                 // Link="/"
@@ -72,9 +83,12 @@ function ResponsiveAppBar({ token }) {
                   height: isSmallScreen ? "8vh" : "8vh",
                   width: isSmallScreen ? "25vh" : "25vh",
                 }}
-              />
+              /> */}
+              <Typography style={headerStyle}>ReviewIT</Typography>
+              {/* <Typography>Review IT</Typography> */}
             </Link>
-            {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
+            
+            {/* <Typography variant="h5" color='#a87b4c' sx={{fontWeight: 'bold'}}>𝓡𝓔𝓥𝓘𝓔𝓦𝓘𝓣</Typography> */}
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none"}, justifyContent: {  xs: "flex-end", md: "none" } }}>

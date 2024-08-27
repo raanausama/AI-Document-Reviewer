@@ -30,7 +30,7 @@ function UploadDocument({token}) {
 
 
   const handleFileUpload = async () => {
-    setLoading(true);
+    console.log('handleFileUpload',files.doc[0])
     const formData = new FormData();
     
     // Assuming you have a single file in the doc array
@@ -40,6 +40,7 @@ function UploadDocument({token}) {
       formData.append('points', 'Report');
       console.log('formData', formData,`${import.meta.env.VITE_APP_SERVER_API_URL}`);
       try {
+        setLoading(true);
         const response = await axios.post(`${import.meta.env.VITE_APP_SERVER_API_URL}/rpr`, formData,{
           onUploadProgress: progressEvent => {
             const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
@@ -61,10 +62,8 @@ function UploadDocument({token}) {
     }
   };
   useEffect( () => {
-    if (done && files.doc[0]) {
     handleFileUpload();
-  }
-  }, [done]);
+  }, [files]);
 
   return (
     <>
@@ -75,14 +74,14 @@ function UploadDocument({token}) {
           <Typography className="animate-character" variant="h2" sx={{fontSize: '3.5rem'}}> AI Document Reviewer</Typography>
         </Grid>
         <Grid item xs={12} display='flex' justifyContent='center' mt={3}>
-          <UploaderDropzone setWords={setWords} words={words} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setDocumentText={setDocumentText} documentText={documentText} name="passport" setFiles={setFiles} files={files} setDone={setDone} token={token}/>
+          <UploaderDropzone setWords={setWords} words={words} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} setDocumentText={setDocumentText} documentText={documentText} name="passport" setFiles={setFiles} files={files} setDone={setDone} token={token} handleFileUpload={handleFileUpload}/>
         </Grid>
       </Grid>
       
       <Grid container mt={5} color={'white'} mb={20}>
       {loading && (
           <Grid item xs={12} >
-            <LinearProgressWithLabel value={progress} />
+            <CircularProgress value={progress}  sx={{color: '#a87b4c'}}/>
           </Grid>
         )}
         {done && responses?.length > 0 ? (

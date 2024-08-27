@@ -7,18 +7,18 @@ export default function KeyFeatures() {
     <>
     <Container maxWidth={false}>
         <Grid container mt={10} spacing={2} mb={10}>
-        <Grid item xs={12} display='flex' justifyContent='center' color='white'>
-            <Typography variant='h5'>Features</Typography>
+        <Grid item xs={12} display='flex' justifyContent='center' color='black'>
+            <Typography variant='h5'>FEATURES</Typography>
             </Grid>
             <Grid item xs={12} display='flex' justifyContent='center' color='white'>
                 <Typography variant='h3' className="animate-character">Key Features</Typography>
             </Grid>
-            <Grid item xs={12} md={6} color='white'>
-                <Card sx={{ minWidth: 275, background: '#A7BEF2' }}>
+            <Grid item xs={12} md={6} color='black'>
+                <Card sx={{ minWidth: 275, background: '#white' }}>
                     <CardContent>
                     <Grid container mt={2} >
                         <Grid item xs={2} mb={13}>
-                            <AutoAwesomeIcon sx={{color:'#ab9a9a'}}/>
+                            <AutoAwesomeIcon sx={{color:'goldenrod'}}/>
                         </Grid>
                         <Grid item xs={10} >
                             <Stack textAlign='Left'>
@@ -33,11 +33,11 @@ export default function KeyFeatures() {
                 </Card>
             </Grid>
             <Grid item xs={12} md={6} color='white'>
-                <Card sx={{ minWidth: 275, background: '#A7BEF2' }}>
+                <Card sx={{ minWidth: 275, background: '#white' }}>
                     <CardContent>
                     <Grid container mt={2} >
                         <Grid item xs={2} mb={13}>
-                            <AutoAwesomeIcon sx={{color:'#ab9a9a'}}/>
+                            <AutoAwesomeIcon sx={{color:'goldenrod'}}/>
                         </Grid>
                         <Grid item xs={10} >
                             <Stack textAlign='Left'>
@@ -52,11 +52,11 @@ export default function KeyFeatures() {
                 </Card>
             </Grid>
             <Grid item xs={12} md={6} color='white'>
-                <Card sx={{ minWidth: 275, background: '#A7BEF2' }}>
+                <Card sx={{ minWidth: 275, background: '#white' }}>
                     <CardContent>
                     <Grid container mt={2} >
                         <Grid item xs={2} mb={13}>
-                            <AutoAwesomeIcon sx={{color:'#ab9a9a'}}/>
+                            <AutoAwesomeIcon sx={{color:'goldenrod'}}/>
                         </Grid>
                         <Grid item xs={10} >
                             <Stack textAlign='Left'>
@@ -71,11 +71,11 @@ export default function KeyFeatures() {
                 </Card>
             </Grid>
             <Grid item xs={12} md={6} color='white'>
-                <Card sx={{ minWidth: 275, background: '#A7BEF2' }}>
+                <Card sx={{ minWidth: 275, background: '#white' }}>
                     <CardContent>
                     <Grid container mt={2} >
                         <Grid item xs={2} mb={13}>
-                            <AutoAwesomeIcon sx={{color:'#ab9a9a'}}/>
+                            <AutoAwesomeIcon sx={{color:'goldenrod'}}/>
                         </Grid>
                         <Grid item xs={10} >
                             <Stack textAlign='Left'>
