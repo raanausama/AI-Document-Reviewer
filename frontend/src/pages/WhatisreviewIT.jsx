@@ -15,7 +15,7 @@ function WhatisreviewIT({token}) {
     <>
     <ResponsiveAppBar token={token}/>
     <Container>
-      <Grid container mt={35} color={'white'} mb={25}>
+      <Grid container mt={35} color={'black'} mb={25}>
       <Grid item xs={12}>
           <Typography variant="h2" className="animate-character" sx={{fontSize: '3.7rem'}}> What is ReviewIT?</Typography>
         </Grid>
@@ -31,7 +31,7 @@ function WhatisreviewIT({token}) {
         <Grid item  xs={12} sx={{display: 'flex', justifyContent:'center'}} mt={3}>
           <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4}>
             <Button variant="contained" sx={{ background: "linear-gradient(to right, #E79A3F, #C8B575)", color:"white", fontWeight: 'bold'}} onClick={ () =>  {navigate(token ? '/review-document' : '/login');  }}>Get Started</Button>
-            <Button endIcon={<ArrowForwardIcon />} sx={{color:"white"}}>Learn More</Button>
+            <Button endIcon={<ArrowForwardIcon />} sx={{color:"black"}} onClick={ () =>  {navigate('/faq');  }}>Learn More</Button>
           </Stack>
         </Grid>
       </Grid>

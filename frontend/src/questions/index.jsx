@@ -4,7 +4,7 @@ function CommonQuestions({repo}) {
   return (
     <>
     <Container maxWidth={false} sx={{ mt: repo === 'faqs' ? 20 : 3 }} >
-        <Grid container  sx={{backgroundColor:'#F5B69D', color:'#2A3055', borderRadius: '15px', padding: 2}}  >
+        <Grid container  sx={{backgroundColor:'white', color:'#2A3055', borderRadius: '15px', padding: 2}}  >
             <Grid item xs={12} md={4} mb={{ xs: 0, md: 20 }} mt={5}>
                 <Stack textAlign='Left'>
                     <Typography variant='body2'> FAQ </Typography>

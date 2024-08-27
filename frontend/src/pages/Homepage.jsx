@@ -2,7 +2,7 @@
 import { useNavigate } from 'react-router-dom';
 import { Typography, Grid, Container, Button, Stack,  useMediaQuery,useTheme } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-
+import img1  from "../assets/review.png";
 // import Badge from "@mui/material/Badge";
 
 function Homepage({token}) {
@@ -13,7 +13,10 @@ function Homepage({token}) {
   return (
     <>
       <Container>
-        <Grid container mt={35} color={'black'} mb={25}>
+        <Grid container mt={23} color={'black'} mb={25}>
+          <Grid item xs={12}>
+                <img src={img1} alt="logo" width={200} height={200} />
+          </Grid>
           <Grid item xs={12}>
               <Typography className="animate-character" variant="h2" sx={{fontSize: '3.7rem'}} mt={2}> ReviewIT</Typography>
             </Grid>
@@ -30,8 +33,8 @@ function Homepage({token}) {
             }
             <Grid item  xs={12} sx={{display: 'flex', justifyContent:'center'}} mt={3}>
               <Stack direction={isSmallScreen ? 'column' : 'row'} spacing={4}>
-                <Button variant="contained" sx={{ background: "linear-gradient(to right, #E79A3F, #C8B575)", color:"white", fontWeight: 'bold'}} onClick={ () =>  {navigate(token ? '/review-document' : '/login');  }}>Get Started</Button>
-                <Button endIcon={<ArrowForwardIcon />} sx={{color:"white"}}>Learn More</Button>
+                <Button variant="contained" sx={{ background: "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)", color:"white", fontWeight: 'bold'}} onClick={ () =>  {navigate(token ? '/review-document' : '/login');  }}>Get Started</Button>
+                <Button endIcon={<ArrowForwardIcon />} sx={{color:"black"}} onClick={ () =>  {navigate('/what-is-reviewit');  }}>Learn More</Button>
               </Stack>
             </Grid>
           </Grid>
