@@ -100,6 +100,19 @@ button:focus-visible {
   -webkit-text-fill-color: transparent;
   animation: textClip 4s linear infinite;
 }
+.animate-character3 {
+  background-image: linear-gradient(-225deg, #724d24 20%, #f7fbff 100%);
+
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textClip 2s linear infinite;
+}
 
 @keyframes textClip {
   0% {

@@ -1,4 +1,4 @@
-
+import React, { useState, useEffect } from 'react';
 import { Box, Divider } from '@mui/material';
 import ResponsiveAppBar from '../navbar/NavBar';
 import Homepage from '../pages/Homepage';
@@ -8,40 +8,53 @@ import LearnMore from '../learnmore';
 import CommonQuestions from '../questions';
 import Reviewer from '../pages/Reviewer';
 import Footer from '../pages/Footer';
+import LazyLoader from '../components/LazyLoader.jsx'; 
+import SlideInComponent from './../components/SlideInComponent.jsx';
 
-const Home=({token})=> {
-  
+const Home = ({ token }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <LazyLoader />;
+  }
+
   return (
     <>
-        <ResponsiveAppBar token={token}/>
+      <ResponsiveAppBar token={token} />
 
-        <Homepage token={token}/>
+      <SlideInComponent><Homepage token={token} /></SlideInComponent>
 
-        <Divider sx={{ height: '0.001px',background: 'rgb(171,154,154)',width: '100%',}}/>
+      <Divider sx={{ height: '0.001px', background: 'rgb(171,154,154)', width: '100%' }} />
 
+      <SlideInComponent><KeyFeatures /></SlideInComponent>
 
-        <KeyFeatures/>
+      <Divider sx={{ height: '0.001px', background: 'rgb(171,154,154)', width: '100%' }} />
 
-        <Divider sx={{ height: '0.001px',background: 'rgb(171,154,154)',width: '100%',}}/>
+      <SlideInComponent><Pricing /></SlideInComponent>
 
-        <Pricing/>
+      <Divider sx={{ height: '0.001px', background: 'rgb(171,154,154)', width: '100%' }} />
 
-        <Divider sx={{ height: '0.001px',background: 'rgb(171,154,154)',width: '100%',}}/>
+      <SlideInComponent><LearnMore /></SlideInComponent>
 
-        <LearnMore/>
+      <SlideInComponent><CommonQuestions /></SlideInComponent>
 
-        {/* <Divider sx={{ height: '0.001px',background: 'rgb(171,154,154)',width: '100%',}}/> */}
+      <SlideInComponent><Reviewer token={token} /></SlideInComponent>
 
-        <CommonQuestions/>
+      <Divider sx={{ height: '0.001px', background: 'rgb(171,154,154)', width: '100%' }} />
 
-        <Reviewer token={token}/>
+      <SlideInComponent><Footer /></SlideInComponent>
 
-        <Divider sx={{ height: '0.001px',background: 'rgb(171,154,154)',width: '100%',}}/>
-
-        <Footer/>
 
     </>
   );
-}
+};
 
-export default Home
+export default Home;
