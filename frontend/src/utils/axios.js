@@ -9,9 +9,12 @@ axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
+      console.log("error.response.data.message", error.response.data.message);
+
       swal(
         "Oops...",
-        "Your Session Has Expired Please Login Again!",
+        error.response.data.message,
+        // "Your Session Has Expired Please Login Again!",  
         "error"
       ).then(() => {
         // logout();

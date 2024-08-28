@@ -18,7 +18,7 @@ function Router() {
     <>
       <Routers>
         <Routes>
-          {user?.user && user?.user?.token ? (
+          {/* {user?.user && user?.user?.token ? (
             <Route
               path="/review-document"
               element={<UploadDocument token={user?.user?.token} />}
@@ -29,12 +29,17 @@ function Router() {
               path="/"
               element={<Home token={user?.user?.token} />}
             />
-          )}
-           <Route
-              exact
-              path="/"
-              element={<UploadDocument token={user?.user?.token} />}
-            />
+          )} */}
+          <Route exact path="/" element={<Home token={user?.user?.token} />} />
+          <Route
+            path="/review-document"
+            element={<UploadDocument token={user?.user?.token} />}
+          />
+          <Route
+            exact
+            path="/"
+            element={<UploadDocument token={user?.user?.token} />}
+          />
           <Route
             exact
             path="/home"
@@ -47,10 +52,26 @@ function Router() {
           /> */}
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<LogIn />} />
-          <Route exact path="/what-is-reviewit" element={<WhatisreviewIT token={user?.user?.token}/>} />
-          <Route exact path="/how-it-works" element={<Howitworks token={user?.user?.token}/>}/>
-          <Route exact path="/pricing" element={<Price token={user?.user?.token}/>}/>
-          <Route exact path="/faq" element={<Faqs token={user?.user?.token}/>}/>
+          <Route
+            exact
+            path="/what-is-reviewit"
+            element={<WhatisreviewIT token={user?.user?.token} />}
+          />
+          <Route
+            exact
+            path="/how-it-works"
+            element={<Howitworks token={user?.user?.token} />}
+          />
+          <Route
+            exact
+            path="/pricing"
+            element={<Price token={user?.user?.token} />}
+          />
+          <Route
+            exact
+            path="/faq"
+            element={<Faqs token={user?.user?.token} />}
+          />
         </Routes>
       </Routers>
     </>
