@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Typography,
@@ -8,6 +9,7 @@ import {
   useMediaQuery,
   useTheme,
   Box,
+  CircularProgress, // Import CircularProgress
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -15,6 +17,31 @@ function Homepage({ token }) {
   const navigate = useNavigate();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const [loading, setLoading] = useState(true); // Loading state
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Simulate loading time of 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh", // Full height of the viewport
+        }}
+      >
+        <CircularProgress size={"4rem"} sx={{ color: "#cbbaa8" }} /> {/* Circular loader */}
+      </Box>
+    );
+  }
 
   return (
     <>

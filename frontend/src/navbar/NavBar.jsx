@@ -45,7 +45,7 @@ function ResponsiveAppBar({ token }) {
     gsap.to(currentTarget, { scale: 1 });
   };
 
-  const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing",  "FAQ", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing",  "FAQ"];
+  const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing",  "Faq", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing",  "Faq"];
 
   const headerStyle = {
     fontFamily: 'Cinzel, serif', // Use a fancy font like 'Cinzel'
