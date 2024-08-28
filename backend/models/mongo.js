@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 console.log(process.env.MONGODB);
+// import bcrypt from 'bcrypt'
+const bcrypt = require('bcrypt');
 
 mongoose
   .connect(process.env.MONGODB)
@@ -20,6 +22,7 @@ const newSchema = new mongoose.Schema({
     required: true,
   },
 });
+
 
 const collection = mongoose.model("collection", newSchema);
 

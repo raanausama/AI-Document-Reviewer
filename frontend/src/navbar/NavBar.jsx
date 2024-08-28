@@ -1,32 +1,43 @@
 // import "./navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useRef } from "react";
-import { useDispatch } from 'react-redux';
-import { clearUser } from '../redux/user';
+import { useDispatch } from "react-redux";
+import { clearUser } from "../redux/user";
 
-import { Box, AppBar, Toolbar, IconButton,Button, Typography , Menu, Container, MenuItem, useMediaQuery, useTheme} from "@mui/material";
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Button,
+  Typography,
+  Menu,
+  Container,
+  MenuItem,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import gsap from "gsap";
-import logo  from '../assets/REV.png'
+import logo from "../assets/REV.png";
 // import {styled} from '@mui/system';
 // import SignIn from "../../pages/SignIn";
-
 
 function ResponsiveAppBar({ token }) {
   const dispatch = useDispatch();
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const navigate = useNavigate();
   const handleLogout = () => {
     // Dispatch the clearUser action to logout the user
     dispatch(clearUser());
     // Optionally, you can also close any menu or modal after logout
-    
+
     // Redirect the user to the login page
-    navigate('/login');
+    navigate("/login");
   };
 
   const handleOpenNavMenu = (event) => {
@@ -45,16 +56,26 @@ function ResponsiveAppBar({ token }) {
     gsap.to(currentTarget, { scale: 1 });
   };
 
-  const pages = isSmallScreen ? ["What is ReviewIT?", "How it works?", "Pricing",  "Faq", token ? "Logout" : "Login", "Register"] : ["What is ReviewIT?","How it works?", "Pricing",  "Faq"];
+  const pages = isSmallScreen
+    ? [
+        "What is ReviewIT?",
+        "How it works?",
+        "Pricing",
+        "Faq",
+        token ? "Logout" : "Login",
+        "Register",
+      ]
+    : ["What is ReviewIT?", "How it works?", "Pricing", "Faq"];
 
   const headerStyle = {
-    fontFamily: 'Cinzel, serif', // Use a fancy font like 'Cinzel'
-    fontWeight: 'bold',
-    fontSize: '2.4rem', // Adjust the size as needed
-    background: 'linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)', // Gradient color
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+    fontFamily: "Cinzel, serif", // Use a fancy font like 'Cinzel'
+    fontWeight: "bold",
+    fontSize: "2.4rem", // Adjust the size as needed
+    background:
+      "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)", // Gradient color
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
   };
 
   return (
@@ -63,16 +84,22 @@ function ResponsiveAppBar({ token }) {
       sx={{
         backgroundColor: "transparent",
         boxShadow: "none",
-        borderBottom: "0.1px solid #ab9a9a" ,
-        background: 'transparent',
+        borderBottom: "0.1px solid #ab9a9a",
+        background: "transparent",
       }}
     >
       {/* <SignIn open={viewModalOpen} handleClose={handleCloseModal} /> */}
       <Container maxWidth="100%">
         <Toolbar disableGutters>
           {/* <AdbIcon  /> */}
-          <Box sx={{ flexGrow: 0.5, display: { xs: "flex" }, alignItems: 'center' }}>
-            <Link to="/" style={{ textDecoration: 'none' }}>
+          <Box
+            sx={{
+              flexGrow: 0.5,
+              display: { xs: "flex" },
+              alignItems: "center",
+            }}
+          >
+            <Link to="/" style={{ textDecoration: "none" }}>
               {/* <img
                 src={logo}
                 alt="logo"
@@ -85,11 +112,17 @@ function ResponsiveAppBar({ token }) {
               <Typography style={headerStyle}>ReviewIT</Typography>
               {/* <Typography>Review IT</Typography> */}
             </Link>
-            
+
             {/* <Typography variant="h5" color='#a87b4c' sx={{fontWeight: 'bold'}}>𝓡𝓔𝓥𝓘𝓔𝓦𝓘𝓣</Typography> */}
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none"}, justifyContent: {  xs: "flex-end", md: "none" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: { xs: "flex-end", md: "none" },
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -99,7 +132,6 @@ function ResponsiveAppBar({ token }) {
               color="inherit"
             >
               <MenuIcon sx={{ color: "black", fontWeight: "bold" }} />
-
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -130,12 +162,19 @@ function ResponsiveAppBar({ token }) {
                 >
                   {page === "Logout" ? (
                     // If the page is "Logout", render a link to handle logout
-                    <Typography onClick={handleLogout} textAlign="center" fontFamily="Aktiv">
+                    <Typography
+                      onClick={handleLogout}
+                      textAlign="center"
+                      fontFamily="Aktiv"
+                    >
                       {page}
                     </Typography>
                   ) : (
                     // Otherwise, render a Link component to the appropriate page
-                    <Link to={`/${page.toLowerCase().replace(/\s/g, "-")}`} style={{ textDecoration: "none", color: "inherit" }}>
+                    <Link
+                      to={`/${page.toLowerCase().replace(/\s/g, "-")}`}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
                       <Typography textAlign="center" fontFamily="Aktiv">
                         {page}
                       </Typography>
@@ -154,13 +193,12 @@ function ResponsiveAppBar({ token }) {
                 to={`/${page.toLowerCase().replace(/\s/g, "-")}`}
                 onClick={handleCloseNavMenu}
                 sx={{
-                  
                   color: "#212223",
                   display: "block",
                   fontSize: "1rem",
                   fontWeight: "Bold",
                   padding: "1px 30px",
-                  textTransform: 'none',
+                  textTransform: "none",
                 }}
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
@@ -169,43 +207,50 @@ function ResponsiveAppBar({ token }) {
               </Button>
             ))}
           </Box>
-         
+
           {!isSmallScreen && (
-          <>
-          <Box sx={{marginRight: 4}}>
-            <Button sx={{
-                  my: 2,
-                  color: "#212223",
-                  display: "block",
-                  fontSize: "1rem",
-                  fontWeight: "Bold",
-                  ml: "0.5em",
-                  textTransform: 'none',
+            <>
+              <Box sx={{ marginRight: 4 }}>
+                <Button
+                  sx={{
+                    my: 2,
+                    color: token ? "white" : "black",
+                    display: "block",
+                    fontSize: "1rem",
+                    fontWeight: "Bold",
+                    ml: "0.5em",
+                    textTransform: "none",
+                    background: token ? "linear-gradient(to right, #a87b4c, #bc9d6e)" :  "transparent",
+                  }}
+                  onMouseEnter={onEnter}
+                  onMouseLeave={onLeave}
+                  onClick={token ? handleLogout : () => navigate("/login")}
+                >
+                  {" "}
+                  {token ? "Logout" : "Login"}{" "}
+                </Button>
+              </Box>
 
-                
-                }}
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-                onClick={token ? handleLogout : () => navigate("/login")}
-              > {token ? "Logout" : "Login"} </Button>
-          </Box>
-
-          <Box>
-            <Button sx={{
-              
-                  color: "white",
-                  display: "block",
-                  fontSize: "1rem",
-                  fontWeight: "Bold",
-                  background: "linear-gradient(to right, #a87b4c, #bc9d6e)",
-                  textTransform: 'none',
-                                }}
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-                onClick={() => navigate("/register")}
-              > Register </Button>
-          </Box>
-</>)}
+              <Box>
+                <Button
+                  sx={{
+                    color: "white",
+                    display: token ? "none" : "block",
+                    fontSize: "1rem",
+                    fontWeight: "Bold",
+                    background: "linear-gradient(to right, #a87b4c, #bc9d6e)",
+                    textTransform: "none",
+                  }}
+                  onMouseEnter={onEnter}
+                  onMouseLeave={onLeave}
+                  onClick={() => navigate("/register")}
+                >
+                  {" "}
+                  Register{" "}
+                </Button>
+              </Box>
+            </>
+          )}
           {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

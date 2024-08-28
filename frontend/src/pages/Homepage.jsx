@@ -162,7 +162,7 @@ function Homepage({ token }) {
                     },
                   }}
                   onClick={() => {
-                    navigate(token ? "/review-document" : "/login");
+                    navigate("/review-document" );
                   }}
                 >
                   Get Started

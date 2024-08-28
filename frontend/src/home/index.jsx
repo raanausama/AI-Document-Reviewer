@@ -12,19 +12,19 @@ import LazyLoader from '../components/LazyLoader.jsx';
 import SlideInComponent from './../components/SlideInComponent.jsx';
 
 const Home = ({ token }) => {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); 
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000); 
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (loading) {
-    return <LazyLoader />;
-  }
+  // if (loading) {
+  //   return <LazyLoader />;
+  // }
 
   return (
     <>
@@ -46,11 +46,11 @@ const Home = ({ token }) => {
 
       <SlideInComponent><CommonQuestions /></SlideInComponent>
 
-      <SlideInComponent><Reviewer token={token} /></SlideInComponent>
+      <Reviewer token={token} />
 
       <Divider sx={{ height: '0.001px', background: 'rgb(171,154,154)', width: '100%' }} />
 
-      <SlideInComponent><Footer /></SlideInComponent>
+      <Footer />
 
 
     </>
