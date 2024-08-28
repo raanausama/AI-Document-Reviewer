@@ -11,6 +11,7 @@ import {
   Box,
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import heroimage from "../assets/hero-image.jpg"
 
 function Homepage({ token }) {
   const navigate = useNavigate();
@@ -30,7 +31,7 @@ function Homepage({ token }) {
         >
           <Grid item xs={12} sx={{ position: "relative", textAlign: "left" }}>
             <img
-              src="/public/Leonardo_Phoenix_A_sleek_modern_landscape_banner_with_a_promin_1.jpg"
+              src={heroimage}
               alt="Hero Image"
               style={{
                 width: "100%",
