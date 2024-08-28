@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import {
   Typography,
@@ -121,7 +120,7 @@ function Homepage({ token }) {
                         "perspective(999px)  translate3d(0px, -4px, 5px)",
                       background: "#CBBAA8",
                     },
-                    width: { xs: "60%", sm: "40%", md: "45%", lg: "100%" },
+                    width: { xs: "70%", sm: "40%", md: "45%", lg: "100%" },
                     height: {
                       xs: "1.5rem",
                       sm: "2rem",
@@ -171,7 +170,9 @@ function Homepage({ token }) {
                     },
                     display: { xs: "none", sm: "flex" },
                   }}
-                  onClick={ () =>  {navigate('/what-is-reviewit');  }}
+                  onClick={() => {
+                    navigate("/what-is-reviewit");
+                  }}
                 >
                   Learn More
                 </Button>
