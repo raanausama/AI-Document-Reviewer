@@ -1,5 +1,5 @@
 import axios from "axios";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 // import { logout } from './logout';
 // ----------------------------------------------------------------------
 
@@ -11,11 +11,16 @@ axiosInstance.interceptors.response.use(
     if (error.response && error.response.status === 401) {
       console.log("error.response.data.message", error.response.data.message);
 
-      swal(
-        "Oops...",
-        error.response.data.message,
+      Swal.fire({
+        icon:"error",
+        title: error.response.data.message,
         // "Your Session Has Expired Please Login Again!",  
-        "error"
+        text:"error",
+        background: "linear-gradient(153deg, rgb(51, 49, 43) 30%, rgb(168, 123, 76) 80%)",
+        color: "white",
+        confirmButtonColor: "#a87b4c",
+        confirmButtonText: "Try Again",
+      }
       ).then(() => {
         // logout();
         // return <Navigate to="/login" />;

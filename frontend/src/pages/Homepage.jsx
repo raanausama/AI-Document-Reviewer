@@ -55,7 +55,7 @@ function Homepage({ token }) {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Grid item xs={12} sx={{ position: "relative", textAlign: "left" }}>
+          <Grid item xs={12} sx={{ position: "relative", textAlign: "left",  }}>
             <img
               src={heroimage}
               alt="Hero Image"
