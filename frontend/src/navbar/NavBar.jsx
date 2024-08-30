@@ -19,7 +19,8 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import gsap from "gsap";
-import logo from "../assets/REV.png";
+// import logo from "../assets/REV. png";
+import logo from "../assets/testlogo.png";
 // import {styled} from '@mui/system';
 // import SignIn from "../../pages/SignIn";
 
@@ -72,7 +73,7 @@ function ResponsiveAppBar({ token }) {
     fontWeight: "bold",
     fontSize: "2.4rem", // Adjust the size as needed
     background:
-      "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)", // Gradient color
+      "linear-gradient(90deg, rgba(216,155,100,1) 30%, rgba(226,202,159,1) 100%", // Gradient color
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
@@ -99,7 +100,14 @@ function ResponsiveAppBar({ token }) {
               alignItems: "center",
             }}
           >
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link
+              to="/"
+              style={{
+                textDecoration: "none",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
               {/* <img
                 src={logo}
                 alt="logo"
@@ -109,6 +117,11 @@ function ResponsiveAppBar({ token }) {
                   width: isSmallScreen ? "25vh" : "25vh",
                 }}
               /> */}
+              <img
+                src={logo}
+                alt="logo"
+                style={{ height: "70px", width: "70px" }}
+              />
               <Typography style={headerStyle}>ReviewIT</Typography>
               {/* <Typography>Review IT</Typography> */}
             </Link>
@@ -220,7 +233,9 @@ function ResponsiveAppBar({ token }) {
                     fontWeight: "Bold",
                     ml: "0.5em",
                     textTransform: "none",
-                    background: token ? "linear-gradient(to right, #a87b4c, #bc9d6e)" :  "transparent",
+                    background: token
+                      ? "linear-gradient(to right, #a87b4c, #bc9d6e)"
+                      : "transparent",
                   }}
                   onMouseEnter={onEnter}
                   onMouseLeave={onLeave}

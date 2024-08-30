@@ -18,7 +18,7 @@ function Router() {
     <>
       <Routers>
         <Routes>
-          {/* {user?.user && user?.user?.token ? (
+          {user?.user && user?.user?.token ? (
             <Route
               path="/review-document"
               element={<UploadDocument token={user?.user?.token} />}
@@ -29,8 +29,8 @@ function Router() {
               path="/"
               element={<Home token={user?.user?.token} />}
             />
-          )} */}
-          <Route exact path="/" element={<Home token={user?.user?.token} />} />
+          )}
+          {/* <Route exact path="/" element={<Home token={user?.user?.token} />} /> */}
           <Route
             path="/review-document"
             element={<UploadDocument token={user?.user?.token} />}

@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 const SlideInComponent = ({ children }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5, // Trigger when 50% of the element is in view
+    threshold: 0.3, // Trigger when 30% of the element is in view
   });
 
   return (
