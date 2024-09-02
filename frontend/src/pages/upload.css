@@ -31,11 +31,13 @@
 
   }
 
+
   .dzu-previewButton{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxrzPQ6YNa3rS75Wv9uQmyQOx5HAOwmLUmg&s") !important;
     color: white !important;
-    background-color: white;
-    border-radius: 5px;
-    padding: 5px !important;
+    /* background-color: white; */
+    border-radius: 3px;
+    padding: 3px !important;
   }
   .dzu-submitButton{
     background:linear-gradient(to right, #bc9d6e,#bc9d6e);

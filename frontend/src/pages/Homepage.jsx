@@ -49,8 +49,8 @@ function Homepage({ token }) {
       <Container>
         <Grid
           container
-          mt={20}
-          mb={15}
+          mt={15}
+          mb={5}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}

@@ -47,7 +47,7 @@ export default function Pricing({ hide }) {
   return (
     <>
       <Container maxWidth={false}>
-        <Grid container mt={15} spacing={2} mb={10}>
+        <Grid container mt={12} spacing={2} mb={5}>
           <Grid
             item
             xs={12}
@@ -88,6 +88,7 @@ export default function Pricing({ hide }) {
           {/* </Grid> */}
           <Grid
             item
+            gap={2}
             xs={12}
             display="flex"
             justifyContent="center"
@@ -124,7 +125,7 @@ export default function Pricing({ hide }) {
           <Cards
             title="Annual plan"
             backgroundColor="linear-gradient(to right, #bc9d6e, #e6e5e4)" // Tan to Charcoal gradient
-            textColor="#e9e9e9" // Pewter text color for better contrast
+            textColor="#212223" // Pewter text color for better contrast
             price="$97 / year"
             features={proFeatures}
             buttonText="Pay"

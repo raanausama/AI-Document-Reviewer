@@ -11,7 +11,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
 export default function KeyFeatures() {
   return (
-    <Container maxWidth={false} sx={{  padding: "40px 0" }}>
+    <Container maxWidth={false} sx={{  padding: "40px 0", mt: 10 }}>
       <Grid container spacing={4}>
         <Grid item xs={12} display="flex" justifyContent="center">
           <Typography variant="h5" color="Black">
