@@ -17,6 +17,8 @@ import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import "./../Loader/Loader.css";
+
 
 // import Badge from "@mui/material/Badge";
 
@@ -187,15 +189,43 @@ function UploadDocument({ token }) {
           </Grid>
         </Grid>
 
-        <Grid container mt={5} color={"white"} mb={20}>
+        <Grid
+          container
+          mt={5}
+          color={"white"}
+          mb={20}
+          display={"flex"}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
           {loading && (
-            <Grid item xs={12}>
-              <CircularProgress value={progress} sx={{ color: "#a87b4c" }} />
+            <Grid
+              className="loader"
+              item
+              xs={4}
+              mt={3}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              {/* <CircularProgress  sx={{ color: "#a87b4c" }} /> */}
+              <div class="spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
             </Grid>
           )}
 
           {done && responses?.length > 0 ? (
-            <Grid item xs={12}>
+            <Grid item mt={5} xs={12}>
               <Button
                 variant='contained'
                 sx={{

@@ -35,7 +35,7 @@ function CommonQuestions({ repo }) {
     <>
       <Container
         maxWidth={false}
-        sx={{ mt: repo === 'faqs' ? 20 : 3, display:"flex", justifyContent:"center",  mb: repo === 'faqs' ? 20 : 3 }}
+        sx={{ mt: repo === 'faqs' ? 15 : 3, display:"flex", justifyContent:"center",  mb: repo === 'faqs' ? 15 : 3 }}
       >
         <Grid
           container

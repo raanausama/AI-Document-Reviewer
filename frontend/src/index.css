@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #BC9D6E;
+  color: #BC9D6E !important;
 }
 
 body {

@@ -134,6 +134,7 @@ function ResponsiveAppBar({ token }) {
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
               justifyContent: { xs: "flex-end", md: "none" },
+              // background:'linear-gradient(to right, #88775d, #212223)',
             }}
           >
             <IconButton
@@ -163,13 +164,20 @@ function ResponsiveAppBar({ token }) {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
+              MenuListProps={{
+                disablePadding: true,
+              }}
               sx={{
                 display: { xs: "block", md: "none" },
+                // background:'linear-gradient(to right, #88775d, #212223)',
+                color: "#e9e9e9",
+                borderRadius: "15px",
+                padding: 4,
               }}
             >
               {pages.map((page) => (
                 <MenuItem
-                  style={{ background: "white" }}
+                  style={{background:'linear-gradient(to right, #88775d, #212223)' }}
                   key={page}
                   onClick={handleCloseNavMenu}
                 >
@@ -179,6 +187,7 @@ function ResponsiveAppBar({ token }) {
                       onClick={handleLogout}
                       textAlign="center"
                       fontFamily="Aktiv"
+                      color = "#e9e9e9"
                     >
                       {page}
                     </Typography>
@@ -188,7 +197,7 @@ function ResponsiveAppBar({ token }) {
                       to={`/${page.toLowerCase().replace(/\s/g, "-")}`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      <Typography textAlign="center" fontFamily="Aktiv">
+                      <Typography textAlign="center" fontFamily="Aktiv" color = "#e9e9e9">
                         {page}
                       </Typography>
                     </Link>

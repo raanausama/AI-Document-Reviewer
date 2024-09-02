@@ -13,7 +13,7 @@ function LearnMore() {
   return (
     <>
     <Container maxWidth={false}>
-        <Grid container mt={20} color={'white'} mb={15}>
+        <Grid container mt={10} color={'white'} mb={5}>
           <Grid item xs={12}>
             <Typography variant="h2" className="animate-character" sx={{fontSize: '3.5rem'}}> Efficient Document Review with AI</Typography>
           </Grid>
