@@ -16,7 +16,9 @@ import html2pdf from "html2pdf.js";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import "./../Loader/Loader.css";
+
 
 // import Badge from "@mui/material/Badge";
 
@@ -79,20 +81,42 @@ function UploadDocument({ token }) {
         } else {
           setDone(true);
           setLoading(false);
-          swal({
-            title: "Please login to continue",
-            text: "Click ok to redirect to login page",
+          Swal.fire({
             icon: "warning",
+            title: "Please login to Continue",
+            text: "Click OK to redirect to login page",
+            background:
+              "linear-gradient(153deg, rgb(51, 49, 43) 30%, rgb(168, 123, 76) 80%)",
+            color: "white",
+            cancelButtonText: "Cancel",
+            showCancelButton: true,
+            confirmButtonColor: "#a87b4c",
+            cancelButtonColor: "brown",
+            
             buttons: true,
             dangerMode: true,
-          }).then((willLogin) => {
-            if (willLogin) {
+          }).then((result) => {
+            if (result.isConfirmed) {
               navigate("/login");
             } else {
               // Handle the case where the user cancels the upload
               console.log("User does not want to login");
             }
           });
+          // Swal.fire({
+          //   title: "Please login to continue",
+          //   text: "Click ok to redirect to login page",
+          //   icon: "warning",
+          //   buttons: true,
+          //   dangerMode: true,
+          // }).then((willLogin) => {
+          //   if (willLogin) {
+          //     navigate("/login");
+          //   } else {
+          //     // Handle the case where the user cancels the upload
+          //     console.log("User does not want to login");
+          //   }
+          // });
         }
       } catch (error) {
         console.error("Error uploading file", error);
@@ -134,19 +158,19 @@ function UploadDocument({ token }) {
         <Grid container mt={30} color={"white"} mb={5}>
           <Grid item xs={12}>
             <Typography
-              className="animate-character"
-              variant="h2"
+              className='animate-character'
+              variant='h2'
               sx={{ fontSize: "3.5rem" }}
             >
               {" "}
               Upload Your Document
             </Typography>
-            <Typography variant="body" sx={{ color: "gray" }}>
+            <Typography variant='body' sx={{ color: "gray" }}>
               {" "}
               Research Paper | Proposal | Project Report | Etc
             </Typography>
           </Grid>
-          <Grid item xs={12} display="flex" justifyContent="center" mt={3}>
+          <Grid item xs={12} display='flex' justifyContent='center' mt={3}>
             <UploaderDropzone
               handleResponses={handleResponses}
               setWords={setWords}
@@ -155,7 +179,7 @@ function UploadDocument({ token }) {
               setCurrentIndex={setCurrentIndex}
               setDocumentText={setDocumentText}
               documentText={documentText}
-              name="passport"
+              name='passport'
               setFiles={setFiles}
               files={files}
               setDone={setDone}
@@ -203,7 +227,7 @@ function UploadDocument({ token }) {
           {done && responses?.length > 0 ? (
             <Grid item mt={5} xs={12}>
               <Button
-                variant="contained"
+                variant='contained'
                 sx={{
                   background: "#CBBAA8",
                   color: "white",
@@ -244,7 +268,7 @@ function UploadDocument({ token }) {
               {/* {responses.map((response, index) => (
               <div key={index}> */}
               <div
-                id="responseContent"
+                id='responseContent'
                 dangerouslySetInnerHTML={{ __html: responses }}
               />
               {/* <Typography variant="subtitle1"><strong>{responses}</strong></Typography> */}

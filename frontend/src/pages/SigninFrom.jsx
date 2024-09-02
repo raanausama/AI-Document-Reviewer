@@ -88,7 +88,6 @@ export default function SignInForm({ navigate, dispatch }) {
             Swal.fire({
               icon: "success",
               title: "You are successfully Sign In",
-              text: "success",
               background: "linear-gradient(153deg, rgb(51, 49, 43) 30%, rgb(168, 123, 76) 80%)",
               color: "white",
               confirmButtonColor: "#a87b4c",
