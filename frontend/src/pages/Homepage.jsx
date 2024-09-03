@@ -46,7 +46,7 @@ function Homepage({ token }) {
 
   return (
     <>
-      <Container>
+      <Container disableGutters={isSmallScreen}>
         <Grid
           container
           mt={15}
@@ -61,7 +61,7 @@ function Homepage({ token }) {
               alt="Hero Image"
               style={{
                 width: "100%",
-                height: "auto",
+                height: isSmallScreen ? "50vh" : "auto",
                 maxHeight: "100vh",
                 objectFit: "cover",
                 objectPosition: "center",
@@ -70,7 +70,7 @@ function Homepage({ token }) {
             <Box
               sx={{
                 position: "absolute",
-                top: { xs: "10%", sm: "15%", md: "20%", lg: "20%" },
+                top: { xs: "25%", sm: "15%", md: "20%", lg: "20%" },
                 left: { xs: "3%", sm: "3%", md: "3%" },
                 color: "white",
                 textAlign: "left",

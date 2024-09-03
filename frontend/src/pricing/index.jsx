@@ -47,7 +47,7 @@ export default function Pricing({ hide }) {
   return (
     <>
       <Container maxWidth={false}>
-        <Grid container mt={12} spacing={2} mb={5}>
+        <Grid container mt={{xs:3 ,sm:12}} spacing={2} mb={5}>
           <Grid
             item
             xs={12}
