@@ -11,8 +11,8 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 
 export default function KeyFeatures() {
   return (
-    <Container maxWidth={false} sx={{  padding: "40px 0", mt: 10 }}>
-      <Grid container spacing={4}>
+    <Container maxWidth={false} sx={{  padding: "40px 0", mt: {xs:0, md: 10} }}>
+      <Grid container spacing={4} p={{xs: 2, md: 0}}>
         <Grid item xs={12} display="flex" justifyContent="center">
           <Typography variant="h5" color="Black">
             FEATURES
@@ -24,7 +24,7 @@ export default function KeyFeatures() {
           </Typography>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} >
           <Card sx={{ backgroundColor: "#cbbaa8", color: "#212223", borderRadius: 2, boxShadow:"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)" }}>
             <CardContent>
               <Grid container>
