@@ -1,4 +1,4 @@
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import {
   Grid,
   Card,
@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { KeyboardArrowRight } from "@mui/icons-material";
 import { apiPost } from "../utils/axios";
+import { useNavigate } from "react-router-dom";
 
 const Cards = ({
   title,
@@ -27,14 +28,17 @@ const Cards = ({
   amount,
 }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
 
   const handlePaymentSubmission = async () => {
     setIsSubmitting(true);
 
+    
+
     const requestData = {
       // token: token, // This should be a simple string
       amount: amount,
-      currency: 'SAR',
+      currency: "SAR",
       customer: {
         first_name: "test",
         middle_name: "test",
@@ -46,25 +50,25 @@ const Cards = ({
         },
       },
     };
-  
+
     // Ensure requestData does not include circular or non-serializable objects
-    console.log('Request data:', requestData);
+    console.log("Request data:", requestData);
 
     try {
-      const res = await apiPost('payment', requestData);
-      console.log('Response:', res);
+      const res = await apiPost("payment", requestData);
+      console.log("Response:", res);
       const paymentUrl = res.transaction.url;
-    
+
       // Redirect the user to the payment page
       window.location.href = paymentUrl;
     } catch (error) {
-      console.error('Payment submission error:', error);
+      console.error("Payment submission error:", error);
     } finally {
       setIsSubmitting(false);
     }
   };
   return (
-    <Grid item xs={12} md={4} color="black">
+    <Grid item xs={12} md={4} color='black'>
       <Card
         sx={{
           minWidth: 275,
@@ -76,9 +80,9 @@ const Cards = ({
         <CardContent>
           <Grid container>
             <Grid item xs={12}>
-              <Stack textAlign="Left">
+              <Stack textAlign='Left'>
                 <Typography
-                  level="h1"
+                  level='h1'
                   sx={{
                     padding: "4px 8px",
                     borderRadius: "16px",
@@ -90,12 +94,12 @@ const Cards = ({
                 >
                   {title}
                 </Typography>
-                <Typography level="h3" mb={2}>
+                <Typography level='h3' mb={2}>
                   {titleText}
                 </Typography>
-                <Divider inset="none" mt={2} color="black" />
+                <Divider inset='none' mt={2} color='black' />
                 <List
-                  size="sm"
+                  size='sm'
                   sx={{ mx: "calc(-1 * var(--ListItem-paddingX))" }}
                 >
                   {features.map((feature, index) => (
@@ -105,9 +109,9 @@ const Cards = ({
                     </ListItem>
                   ))}
                 </List>
-                <Divider inset="none" color="black" />
+                <Divider inset='none' color='black' />
                 <CardActions>
-                  <Typography level="title-lg" sx={{ mr: "auto" }}>
+                  <Typography level='title-lg' sx={{ mr: "auto" }}>
                     {price}
                   </Typography>
                   <Button
@@ -118,9 +122,9 @@ const Cards = ({
                       background: ChipColor === "transparent" ? "" : ChipColor,
                     }}
                     disabled={isSubmitting}
-                    onClick={handlePaymentSubmission}
+                    onClick={() => navigate("/payout")}
                   >
-                    {isSubmitting ? 'Progress...' : 'Pay now'}
+                    {isSubmitting ? "Progress..." : "Pay now"}
                   </Button>
                 </CardActions>
               </Stack>

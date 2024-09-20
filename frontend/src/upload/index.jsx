@@ -15,16 +15,23 @@ import axios from "axios";
 import html2pdf from "html2pdf.js";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Swal from "sweetalert2";
 import "./../Loader/Loader.css";
-
+import { apiGet } from "../utils/axios";
 
 // import Badge from "@mui/material/Badge";
 
-function UploadDocument({ token }) {
-  console.log("TOKEN is", token);
+function UploadDocument({ token, user }) {
+  console.log("user is", user.email);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [status, setStatus] = useState("");
+
+
+  
+
+
 
   //  console.log('UploadDocumenttoken',token)
   const [documentText, setDocumentText] = useState(""); // State to store the text content of the uploaded document
@@ -37,8 +44,8 @@ function UploadDocument({ token }) {
     doc: {},
   });
   const [done, setDone] = useState();
-  console.log("files", files);
-  console.log("done", done);
+  // console.log("files", files);
+  // console.log("done", done);
   const [responses, setResponses] = useState([]); // State to store the responses
   const [progress, setProgress] = useState(0); // State for progress
 
@@ -46,22 +53,25 @@ function UploadDocument({ token }) {
     setResponses([]);
   };
   const handleFileUpload = async () => {
-    console.log("handleFileUpload", files.doc[0]);
+    // console.log("handleFileUpload",  files.doc[0].file);
     const formData = new FormData();
 
     // Assuming you have a single file in the doc array
     if (files.doc[0]) {
+      // console.log('files')
       formData.append("file", files.doc[0].file);
       formData.append("template", "Analysis");
       formData.append("points", "Report");
-      console.log(
-        "formData",
-        formData,
-        `${import.meta.env.VITE_APP_SERVER_API_URL}`
-      );
+      // console.log(
+      //   "formData",
+      //   formData,
+      //   `${import.meta.env.VITE_APP_SERVER_API_URL}`
+      // );
       try {
         setLoading(true);
+        console.log("12313123");
         if (token) {
+          // console.log('token',token)
           const response = await axios.post(
             `${import.meta.env.VITE_APP_SERVER_API_URL}/rpr`,
             formData,
@@ -74,7 +84,7 @@ function UploadDocument({ token }) {
               },
             }
           );
-          console.log("File uploaded successfully", response.data);
+          // console.log("File uploaded successfully", response.data);
           setResponses(response.data);
           setDone(true);
           setLoading(false);
@@ -92,7 +102,7 @@ function UploadDocument({ token }) {
             showCancelButton: true,
             confirmButtonColor: "#a87b4c",
             cancelButtonColor: "brown",
-            
+
             buttons: true,
             dangerMode: true,
           }).then((result) => {
@@ -200,7 +210,7 @@ function UploadDocument({ token }) {
         >
           {loading && (
             <Grid
-              className="loader"
+              className='loader'
               item
               xs={4}
               mt={3}
@@ -209,7 +219,7 @@ function UploadDocument({ token }) {
               alignItems={"center"}
             >
               {/* <CircularProgress  sx={{ color: "#a87b4c" }} /> */}
-              <div class="spinner">
+              <div class='spinner'>
                 <div></div>
                 <div></div>
                 <div></div>
