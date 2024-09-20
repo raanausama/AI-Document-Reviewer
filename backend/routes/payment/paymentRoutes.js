@@ -1,9 +1,11 @@
 const { Router } = require("express");
-const { payment,getChargeDetails } = require("../../services/payment/paymentService");
+const { payment, transaction, getTransactionByEmail } = require("../../services/payment/paymentService");
 const router = Router();
 
-router.route("/").post(payment);
-router.route("/getCharge/:chargeId").get(getChargeDetails);
+router.route("/").get(payment);
+router.route("/transaction").post(transaction);
+router.route("/getTransactionByEmail").get(getTransactionByEmail);
+// router.route("/getCharge/:chargeId").get(getChargeDetails);
 
 // router.route("/adminVersionValidation").get(adminVersionValidation);
 

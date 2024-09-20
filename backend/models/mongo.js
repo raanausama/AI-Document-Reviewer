@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-console.log(process.env.MONGODB);
+// console.log(process.env.MONGODB);
 // import bcrypt from 'bcrypt'
 const bcrypt = require('bcrypt');
 

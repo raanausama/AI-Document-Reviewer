@@ -26,9 +26,9 @@ export default function Pricing({ hide }) {
 
   const [chargeData, setChargeData] = useState(null);
   const chardid = "chg_TS01A0920241419Dp840708828";
-  const params = new URLSearchParams(location.search);
-  const tapId = params.get("tap_id");
-  console.log("[tapId]", tapId);
+  // const params = new URLSearchParams(location.search);
+  // const tapId = params.get("tap_id");
+  // console.log("[tapId]", tapId);
 
   // useEffect(() => {
   //   const fetchChargeDetails = async () => {
