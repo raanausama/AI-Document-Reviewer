@@ -18,7 +18,7 @@ a {
 }
 
 a:hover {
-  color: #BC9D6E !important;
+  color: #012a61 !important;
 }
 
 body {
@@ -59,11 +59,11 @@ button:focus-visible {
   :root {
     color: #213547;
     /* background-image: linear-gradient(to right, #9747FF, #684DFF); */
-     /* background-image: linear-gradient(to right, #E79A3F,#C8B575 ); */
-     /* background-image: linear-gradient(to right, #110f25,#2A3055 ); */
-     background: #f9f9f9 !important;
-     /* background: rgb(64,60,103); */
-     /* background: rgb(167,165,185); */
+    /* background-image: linear-gradient(to right, #E79A3F,#C8B575 ); */
+    /* background-image: linear-gradient(to right, #110f25,#2A3055 ); */
+    background: #f9f9f9 !important;
+    /* background: rgb(64,60,103); */
+    /* background: rgb(167,165,185); */
   }
   /* a:hover {
     color: #747bff;
@@ -113,12 +113,25 @@ button:focus-visible {
   -webkit-text-fill-color: transparent;
   animation: textClip 2s linear infinite;
 }
+.animate-character4 {
+  background-image: linear-gradient(-225deg, #2997f7 20%, #f7fbff 100%);
+
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: white;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textClip 3s linear infinite;
+}
 
 @keyframes textClip {
   0% {
-      background-position: 0% 50%;
+    background-position: 0% 50%;
   }
   100% {
-      background-position: 200% center;
+    background-position: 200% center;
   }
 }

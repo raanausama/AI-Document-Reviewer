@@ -9,7 +9,7 @@
     position: absolute;
     width: 50%;
     height: 150%;
-    background: linear-gradient(to right, #88775d, #212223);
+    background: linear-gradient(to right, #012a61, #2997f7);
     transform: rotate(calc(var(--rotation) * 1deg)) translate(0, calc(var(--translation) * 1%));
     animation: spinner-fzua35 1s calc(var(--delay) * 1s) infinite ease;
   }

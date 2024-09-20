@@ -35,13 +35,13 @@ function CommonQuestions({ repo }) {
     <>
       <Container
         maxWidth={false}
-        sx={{ mt: repo === 'faqs' ? 15 : 3, display:"flex", justifyContent:"center",  mb: repo === 'faqs' ? 15 : 3 }}
+        sx={{ mt: repo === 'faqs' ? 15 : 3, display: "flex", justifyContent: "center", mb: repo === 'faqs' ? 15 : 3 }}
       >
         <Grid
           container
           sx={{
-            background: 'linear-gradient(to right, #88775d, #212223)', // Darker Charcoal for the container background
-            color: '#e9e9e9', // Pewter text color for contrast
+            background: 'linear-gradient(to right, #012a61, #2997f7)', // Dark Blue to Sky Blue gradient for container background
+            color: '#fafafa', // Light Gray text color for contrast
             borderRadius: '15px',
             padding: 4, // Increased padding for better spacing
             maxWidth: '900px', // Set a fixed maxWidth for consistency
@@ -52,20 +52,20 @@ function CommonQuestions({ repo }) {
             <Stack textAlign='left'>
               <Typography
                 variant='body2'
-                sx={{ color: '#bc9d6e' }} // Tan color for the 'FAQ' label
+                sx={{ color: '#2997f7' }} // Sky Blue color for the 'FAQ' label
               >
                 FAQ
               </Typography>
               <Typography
                 variant='h4'
                 fontWeight='bold'
-                sx={{ color: '#e9e9e9' }} // Pewter color for the heading
+                sx={{ color: '#fafafa' }} // Light Gray color for the heading
               >
                 Common Questions
               </Typography>
               <Typography
                 variant='body2'
-                sx={{ color: '#cbbaa8' }} // Nude color for the description
+                sx={{ color: '#2997f7' }} // Sky Blue color for the description
               >
                 Here are some common questions users ask frequently.
               </Typography>
@@ -79,13 +79,13 @@ function CommonQuestions({ repo }) {
                     <Typography
                       variant='h5'
                       fontWeight='bold'
-                      sx={{ color: '#e9e9e9', cursor: 'pointer' }} // Pewter color for the question headings
+                      sx={{ color: '#fafafa', cursor: 'pointer' }} // Light Gray color for the question headings
                       onClick={() => toggleQuestion(index)}
                     >
                       {item.question}
                     </Typography>
                     <IconButton
-                      sx={{ color: '#bc9d6e' }} // Tan color for the icon
+                      sx={{ color: '#FAFAFA' }} // Sky Blue color for the icon
                       onClick={() => toggleQuestion(index)}
                     >
                       {openQuestions[index] ? <Close /> : <Add />}
@@ -95,7 +95,7 @@ function CommonQuestions({ repo }) {
                     <Typography
                       variant='body1'
                       mt={2}
-                      sx={{ color: '#e9e9e9', transition: 'all 0.3s ease' }} // Pewter color for the answers
+                      sx={{ color: '#fafafa', transition: 'all 0.3s ease' }} // Light Gray color for the answers
                     >
                       {item.answer}
                     </Typography>

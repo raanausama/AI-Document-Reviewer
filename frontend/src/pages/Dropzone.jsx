@@ -121,7 +121,7 @@ const UploaderDropzone = ({
             <img
               width="80"
               height="80"
-              src="https://img.icons8.com/bubbles/100/upload.png"
+              src="https://img.icons8.com/?size=100&id=cWhjh7IgpFHy&format=png&color=000000"
               alt="upload"
             />
             <Typography>Drag and Drop here</Typography>

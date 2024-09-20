@@ -16,9 +16,9 @@ axiosInstance.interceptors.response.use(
         title: error.response.data.message,
         // "Your Session Has Expired Please Login Again!",  
         text:"error",
-        background: "linear-gradient(153deg, rgb(51, 49, 43) 30%, rgb(168, 123, 76) 80%)",
+        background: "linear-gradient(to right, #012a61, #2997f7)",
         color: "white",
-        confirmButtonColor: "#a87b4c",
+        confirmButtonColor: "#012a61",
         confirmButtonText: "Try Again",
       }
       ).then(() => {
