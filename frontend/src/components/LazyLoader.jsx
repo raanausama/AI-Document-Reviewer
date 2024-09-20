@@ -77,7 +77,7 @@
 import React from 'react';
 import { Box, LinearProgress } from '@mui/material';
 import './../index.css';
-import logo from "./../assets/animatelogogif.gif"
+import logo from "./../assets/Review it lazyloader.gif"
 
 const LazyLoader = () => {
   return (

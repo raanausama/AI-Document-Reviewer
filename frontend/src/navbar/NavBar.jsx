@@ -21,6 +21,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import gsap from "gsap";
 // import logo from "../assets/REV. png";
 import logo from "../assets/testlogo.png";
+import logo1 from "../assets/logo1.png";
 // import {styled} from '@mui/system';
 // import SignIn from "../../pages/SignIn";
 
@@ -62,18 +63,18 @@ function ResponsiveAppBar({ token }) {
         "What is ReviewIT?",
         "How it works?",
         "Pricing",
-        "Faq",
+        "FAQ",
         token ? "Logout" : "Login",
         "Register",
       ]
-    : ["What is ReviewIT?", "How it works?", "Pricing", "Faq"];
+    : ["What is ReviewIT?", "How it works?", "Pricing", "FAQ"];
 
   const headerStyle = {
     fontFamily: "Cinzel, serif", // Use a fancy font like 'Cinzel'
     fontWeight: "bold",
     fontSize: "2.4rem", // Adjust the size as needed
     background:
-      "linear-gradient(90deg, rgba(216,155,100,1) 30%, rgba(226,202,159,1) 100%", // Gradient color
+      "linear-gradient(90deg, rgba(1,42,97,1) 30%, rgba(41,151,247,1) 100%)", // Gradient color
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
@@ -106,23 +107,15 @@ function ResponsiveAppBar({ token }) {
                 textDecoration: "none",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              {/* <img
-                src={logo}
-                alt="logo"
-                // Link="/"
-                style={{
-                  height: isSmallScreen ? "8vh" : "8vh",
-                  width: isSmallScreen ? "25vh" : "25vh",
-                }}
-              /> */}
               <img
-                src={logo}
+                src={logo1}
                 alt="logo"
-                style={{ height: "70px", width: "70px" }}
+                style={{ height: "100px", width: "100px" }}
               />
-              <Typography style={headerStyle}>ReviewIT</Typography>
+              {/* <Typography style={headerStyle}>ReviewIT</Typography> */}
               {/* <Typography>Review IT</Typography> */}
             </Link>
 
@@ -177,7 +170,9 @@ function ResponsiveAppBar({ token }) {
             >
               {pages.map((page) => (
                 <MenuItem
-                  style={{background:'linear-gradient(to right, #88775d, #212223)' }}
+                  style={{
+                    background: "linear-gradient(to right, #88775d, #212223)",
+                  }}
                   key={page}
                   onClick={handleCloseNavMenu}
                 >
@@ -187,7 +182,7 @@ function ResponsiveAppBar({ token }) {
                       onClick={handleLogout}
                       textAlign="center"
                       fontFamily="Aktiv"
-                      color = "#e9e9e9"
+                      color="#e9e9e9"
                     >
                       {page}
                     </Typography>
@@ -197,7 +192,11 @@ function ResponsiveAppBar({ token }) {
                       to={`/${page.toLowerCase().replace(/\s/g, "-")}`}
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
-                      <Typography textAlign="center" fontFamily="Aktiv" color = "#e9e9e9">
+                      <Typography
+                        textAlign="center"
+                        fontFamily="Aktiv"
+                        color="#e9e9e9"
+                      >
                         {page}
                       </Typography>
                     </Link>
@@ -243,7 +242,7 @@ function ResponsiveAppBar({ token }) {
                     ml: "0.5em",
                     textTransform: "none",
                     background: token
-                      ? "linear-gradient(to right, #a87b4c, #bc9d6e)"
+                      ? "linear-gradient(to right, #012a61, #2997f7)"
                       : "transparent",
                   }}
                   onMouseEnter={onEnter}
@@ -262,7 +261,7 @@ function ResponsiveAppBar({ token }) {
                     display: token ? "none" : "block",
                     fontSize: "1rem",
                     fontWeight: "Bold",
-                    background: "linear-gradient(to right, #a87b4c, #bc9d6e)",
+                    background: "linear-gradient(to right, #012a61, #2997f7)",
                     textTransform: "none",
                   }}
                   onMouseEnter={onEnter}

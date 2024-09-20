@@ -19,7 +19,7 @@
     overflow: hidden !important;
     border-radius: 10px;
     min-height: 170px !important;
-    background: linear-gradient(to right, #88775d, #212223);
+    background: linear-gradient(to right, #012a61, #2997f7);
     max-width: 35vw !important;
     min-width: 40vw;
   }
@@ -33,14 +33,14 @@
 
 
   .dzu-previewButton{
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFxrzPQ6YNa3rS75Wv9uQmyQOx5HAOwmLUmg&s") !important;
-    color: white !important;
-    /* background-color: white; */
+    background-image: url("https://img.icons8.com/?size=100&id=71200&format=png&color=000000") !important;
+    /* color: white !important; */
+    background-color: white;
     border-radius: 3px;
     padding: 3px !important;
   }
   .dzu-submitButton{
-    background:linear-gradient(to right, #bc9d6e,#bc9d6e);
+    background:radial-gradient( circle at 10% 20%, #2997f7, #012a61 );
   }
   @media only screen and (max-device-width: 480px) {
     .dzu-dropzone{

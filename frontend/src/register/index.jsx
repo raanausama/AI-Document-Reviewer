@@ -21,7 +21,7 @@ import swal from "sweetalert";
 import * as Yup from "yup";
 import Iconify from "../components/Iconify";
 import { apiPost } from "../utils/axios";
-import logo  from '../assets/REV.png'
+import logo  from '../assets/logo2.png'
 
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -31,13 +31,14 @@ const defaultTheme = createTheme();
 export default function SignUp() {
 
   const headerStyle = {
-    fontFamily: 'Cinzel, serif', // Use a fancy font like 'Cinzel'
-    fontWeight: 'bold',
-    fontSize: '2.4rem', // Adjust the size as needed
-    background: 'linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)', // Gradient color
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+    fontFamily: "Cinzel, serif", // Use a fancy font like 'Cinzel'
+    fontWeight: "bold",
+    fontSize: "2.4rem", // Adjust the size as needed
+    background:
+      "linear-gradient(90deg, rgba(1,42,97,1) 30%, rgba(41,151,247,1) 100%)", // Gradient color
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    textShadow: "2px 2px 4px rgba(0,0,0,0.3)",
   };
 
   const navigate = useNavigate();
@@ -157,19 +158,10 @@ export default function SignUp() {
                 DOCUMENT REVIEWER
               </Typography> */}
                <Box sx={{ flexGrow: 0.5, display: "flex", alignItems: 'center', justifyContent: 'center' }} mt={5}>
-                <a href="/">
-                  {/* <img
-                    src={logo}
-                    alt="logo"
-                    Link="/"
-                    style={{
-                      height: isSmallScreen ? "8vh" : "8vh",
-                      width: isSmallScreen ? "25vh" : "25vh",
-                    }}
-                  /> */}
-                  <Typography style={headerStyle}>ReviewIT</Typography>
-
-                </a>
+               <a href="/">
+              {/* <Typography style={headerStyle}>ReviewIT</Typography> */}
+              <img src= {logo} width={"120px"} height={"80px"}/>
+            </a>
                 {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
               </Box>
             <Box
@@ -315,7 +307,7 @@ export default function SignUp() {
                 variant="contained"
                 loading={isSubmitting}
                 onClick={handleSubmit}
-                sx={{ borderRadius: '30px', mt: 3, mb: 2, background: "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)" }}
+                sx={{ borderRadius: '30px', mt: 3, mb: 2, background: "linear-gradient(153deg, #012a61 0%, #2997f7 50%)" }}
               >
               Sign Up
             </LoadingButton>

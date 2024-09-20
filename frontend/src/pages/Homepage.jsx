@@ -12,7 +12,7 @@ import {
   CircularProgress, // Import CircularProgress
 } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import heroimage from "../assets/hero-image.jpg"
+import Banner from "../assets/banner.png";
 
 function Homepage({ token }) {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ function Homepage({ token }) {
           height: "100vh", // Full height of the viewport
         }}
       >
-        <CircularProgress size={"4rem"} sx={{ color: "#cbbaa8" }} /> {/* Circular loader */}
+        <CircularProgress size={"4rem"} sx={{ color: "#012a61" }} /> {/* Circular loader */}
       </Box>
     );
   }
@@ -57,7 +57,7 @@ function Homepage({ token }) {
         >
           <Grid item xs={12} sx={{ position: "relative", textAlign: "left",  }}>
             <img
-              src={heroimage}
+              src={Banner}
               alt="Hero Image"
               style={{
                 width: "100%",
@@ -78,7 +78,7 @@ function Homepage({ token }) {
               }}
             >
               <Typography
-                className="animate-character"
+                className="animate-character4"
                 variant="h2"
                 sx={{
                   fontSize: {
@@ -103,13 +103,13 @@ function Homepage({ token }) {
                     lg: "1.3rem",
                   },
                   marginBottom: "1rem",
-                  color: "#212223",
+                  color: "#fafafa",
                   textWrap: " break-word",
                 }}
               >
                 Peer Review your research paper and Increase the chances of your
                 paper acceptance{" "}
-                <span className="animate-character">by 50%</span>
+                <span className="animate-character4">by 50%</span>
               </Typography>
               {!isSmallScreen && (
                 <Typography
@@ -122,7 +122,7 @@ function Homepage({ token }) {
                       lg: "1.3rem",
                     },
                     marginBottom: "2rem",
-                    color: "#212223",
+                    color: "#fafafa",
                   }}
                 >
                   ReviewIT helps you identify the strengths and weaknesses of
@@ -137,7 +137,7 @@ function Homepage({ token }) {
                 <Button
                   variant="contained"
                   sx={{
-                    background: "#a87b4c",
+                    background: "#012a61",
                     color: "white",
                     fontWeight: "bold",
                     transformOrigin: "50% 10px",
@@ -146,7 +146,7 @@ function Homepage({ token }) {
                     "&:hover": {
                       transform:
                         "perspective(999px)  translate3d(0px, -4px, 5px)",
-                      background: "#CBBAA8",
+                      background: "#2997f7",
                     },
                     width: { xs: "70%", sm: "40%", md: "45%", lg: "100%" },
                     height: {
@@ -173,15 +173,15 @@ function Homepage({ token }) {
                   endIcon={<ArrowForwardIcon />}
                   sx={{
                     color: "white",
-                    background: "#CBBAA8",
+                    background: "#2997f7",
                     transformOrigin: "50% 10px",
                     transition:
                       "transform 200ms ease-out, background 500ms ease-in-out",
                     "&:hover": {
                       transform:
                         "perspective(999px)  translate3d(0px, -4px, 5px)",
-                      background: "#a87b4c",
-                      color: "#212223",
+                      background: "#012a61",
+                      color: "white",
                     },
                     width: { xs: "60%", sm: "40%", md: "45%", lg: "100%" },
                     height: {

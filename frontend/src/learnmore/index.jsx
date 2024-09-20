@@ -15,11 +15,11 @@ function LearnMore() {
     <Container maxWidth={false}>
         <Grid container mt={{xs:3 ,sm:10}} color={'white'} mb={5}>
           <Grid item xs={12}>
-            <Typography variant="h2" className="animate-character" sx={{fontSize: '3.5rem'}}> Efficient Document Review with AI</Typography>
+            <Typography variant="h2" className="animate-character4" sx={{fontSize: '3.5rem'}}> Efficient Document Review with AI</Typography>
           </Grid>
           <Grid item  xs={12} sx={{display: 'flex', justifyContent:'center'}} mt={3}>
             <Stack direction='row' spacing={4}>
-              <Button endIcon={<ArrowForwardIcon />}  sx={{background: "linear-gradient(153deg, rgba(51,49,43,1) 0%, rgba(168,123,76) 50%)", color:"white", fontWeight: 'bold'}} onClick={ () =>  {navigate('/what-is-reviewit');  }}>Learn More</Button>
+              <Button endIcon={<ArrowForwardIcon />}  sx={{background: "linear-gradient(to right, #012a61, #2997f7)", color:"white", fontWeight: 'bold'}} onClick={ () =>  {navigate('/what-is-reviewit');  }}>Learn More</Button>
             </Stack>
           </Grid>
           

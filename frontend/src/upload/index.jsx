@@ -86,11 +86,11 @@ function UploadDocument({ token }) {
             title: "Please login to Continue",
             text: "Click OK to redirect to login page",
             background:
-              "linear-gradient(153deg, rgb(51, 49, 43) 30%, rgb(168, 123, 76) 80%)",
+              "linear-gradient(to right, #012a61, #2997f7)",
             color: "white",
             cancelButtonText: "Cancel",
             showCancelButton: true,
-            confirmButtonColor: "#a87b4c",
+            confirmButtonColor: "#012a61",
             cancelButtonColor: "brown",
             
             buttons: true,
@@ -158,14 +158,14 @@ function UploadDocument({ token }) {
         <Grid container mt={30} color={"white"} mb={5}>
           <Grid item xs={12}>
             <Typography
-              className='animate-character'
+              className='animate-character4'
               variant='h2'
               sx={{ fontSize: "3.5rem" }}
             >
               {" "}
               Upload Your Document
             </Typography>
-            <Typography variant='body' sx={{ color: "gray" }}>
+            <Typography variant='body' sx={{ color: "#2997f7" }}>
               {" "}
               Research Paper | Proposal | Project Report | Etc
             </Typography>
@@ -229,7 +229,7 @@ function UploadDocument({ token }) {
               <Button
                 variant='contained'
                 sx={{
-                  background: "#CBBAA8",
+                  background: "linear-gradient(to right, #012a61, #2997f7)",
                   color: "white",
                   // fontWeight: "bold",
                   transformOrigin: "50% 10px",
