@@ -47,7 +47,7 @@ export default function Pricing({ hide }) {
   return (
     <>
       <Container maxWidth={false}>
-        <Grid container mt={{xs:8 ,sm:12}} spacing={2} mb={5}>
+        <Grid container mt={{ xs: 3, sm: 12 }} spacing={2} mb={5}>
           <Grid
             item
             xs={12}
@@ -56,7 +56,7 @@ export default function Pricing({ hide }) {
             color="black"
           >
             {hide === "hide" ? null : (
-              <Typography variant="h5">PRICING</Typography>
+              <Typography sx={{color:"#2997f7"}} variant="h5">PRICING</Typography>
             )}
           </Grid>
           {/* <Grid
@@ -94,44 +94,46 @@ export default function Pricing({ hide }) {
             justifyContent="center"
             color="white"
           >
-            <Typography className="animate-character" variant="h3">
+            <Typography className="animate-character4" variant="h3">
               Chose the Right Plan for You
             </Typography>
           </Grid>
           <Cards
             title="Pay as you go"
-            backgroundColor="linear-gradient(to right, #cbbaa8, #e9e9e9)" // Nude to Pewter gradient
-            textColor="#212223" // Charcoal text color
+            backgroundColor="linear-gradient(to right, #012a61, #2997f7)" // Dark Blue to Sky Blue gradient
+            textColor="#fafafa" // Light Gray text color for better contrast
             price="$6 / paper"
             features={freeFeatures}
             buttonText="Pay"
             titleText="Basic Document Review By AI"
-            ChipColor="transparent"
-            ChipTextColor="black"
+            ChipColor="linear-gradient(to right, #2997f7, #012a61)" // Sky Blue to Light Gray gradient for the chip
+            ChipTextColor="#FAFAFA" // Dark Blue text color for better contrast
             amount={6}
           />
+
           <Cards
             title="Buy in bulk"
-            backgroundColor="linear-gradient(to right, #e9e9e9, #bc9d6e)" // Pewter to Tan gradient
-            textColor="#212223" // Charcoal text color
+            backgroundColor="linear-gradient(to right, #2997f7, #012a61)" // Sky Blue to Light Gray gradient
+            textColor="#fafafa" // Dark Blue text color
             price="$27 / 10 papers"
             features={basicFeatures}
             buttonText="Pay"
             titleText="Enhanced Document Review By AI"
-            ChipColor="linear-gradient(to right, #008080,#3b6544)" // A strong contrast gradient for the chip
-            ChipTextColor="white"
+            ChipColor="linear-gradient(to right, #012a61, #2997f7)" // Dark Blue to Sky Blue gradient for the chip
+            ChipTextColor="#fafafa" // Light Gray text color
             amount={27}
           />
+
           <Cards
             title="Annual plan"
-            backgroundColor="linear-gradient(to right, #bc9d6e, #e6e5e4)" // Tan to Charcoal gradient
-            textColor="#212223" // Pewter text color for better contrast
+            backgroundColor="linear-gradient(to right, #012a61, #2997f7)" // Dark Blue to Light Gray gradient
+            textColor="#fafafa" // Sky Blue text color for contrast
             price="$97 / year"
             features={proFeatures}
             buttonText="Pay"
             titleText="Premium Document Review By AI"
-            ChipColor="linear-gradient(to right, #110f25,#2A3055 )" // Dark, strong contrast gradient for the chip
-            ChipTextColor="white"
+            ChipColor="linear-gradient(to right, #2997f7, #012a61)" // Sky Blue to Dark Blue gradient for the chip
+            ChipTextColor="#fafafa" // Light Gray text color
             amount={97}
           />
         </Grid>

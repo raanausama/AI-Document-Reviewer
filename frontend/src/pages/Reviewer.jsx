@@ -13,7 +13,7 @@ function Reviewer({token}) {
     <>
       <Grid container mt={10} color={'white'} mb={10}>
         <Grid item xs={12}>
-          <Typography variant="h2" className="animate-character" sx={{fontSize: '3.5rem'}}> REVIEWER</Typography>
+          <Typography variant="h2" className="animate-character4" sx={{fontSize: '3.5rem'}}> REVIEWER</Typography>
         </Grid>
         {/* {!isSmallScreen &&
         <Grid item xs={12} mt={3}>
@@ -23,11 +23,11 @@ function Reviewer({token}) {
         <Grid item  xs={12} sx={{display: 'flex', justifyContent:'center'}} mt={3}>
           <Stack  direction={{ xs: 'column', md: 'row' }} spacing={2}>
             {/* <Button  sx={{color:"black", fontWeight: 'bold'}} onClick={() => navigate('/')}>Home </Button> */}
-            <Button  sx={{color:"black", fontWeight: 'bold'}} onClick={() => navigate('/what-is-reviewit')}>What is ReviewIT? </Button>
-            <Button  sx={{color:"black", fontWeight: 'bold'}} onClick={() => navigate('/how-it-works')}>How it works? </Button>
-            <Button  sx={{color:"black", fontWeight: 'bold'}} onClick={() => navigate('/pricing')}>Pricing </Button>
-            {/* <Button  sx={{color:"black", fontWeight: 'bold'}} onClick={() => navigate('/testimonial')}>Testimonial </Button> */}
-            <Button  sx={{color:"black", fontWeight: 'bold'}} onClick={() => navigate('/faq')}>Faqs </Button>
+            <Button  sx={{color:"#012a61", fontWeight: 'bold'}} onClick={() => navigate('/what-is-reviewit')}>What is ReviewIT? </Button>
+            <Button  sx={{color:"#012a61", fontWeight: 'bold'}} onClick={() => navigate('/how-it-works')}>How it works? </Button>
+            <Button  sx={{color:"#012a61", fontWeight: 'bold'}} onClick={() => navigate('/pricing')}>Pricing </Button>
+            {/* <Button  sx={{color:"#012a61", fontWeight: 'bold'}} onClick={() => navigate('/testimonial')}>Testimonial </Button> */}
+            <Button  sx={{color:"#012a61", fontWeight: 'bold'}} onClick={() => navigate('/faq')}>Faqs </Button>
           </Stack>
         </Grid>
        
