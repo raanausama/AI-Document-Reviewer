@@ -26,6 +26,7 @@ const Cards = ({
   ChipColor,
   ChipTextColor,
   amount,
+  token
 }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const Cards = ({
     }
   };
   return (
-    <Grid item xs={12} md={4} color='black'>
+    <Grid item xs={12} md={6} color='black'>
       <Card
         sx={{
           minWidth: 275,
@@ -122,7 +123,7 @@ const Cards = ({
                       background: ChipColor === "transparent" ? "" : ChipColor,
                     }}
                     disabled={isSubmitting}
-                    onClick={() => navigate("/payout")}
+                    onClick={() => {token ? navigate("/payout") : navigate("/login")}}
                   >
                     {isSubmitting ? "Progress..." : "Pay now"}
                   </Button>
