@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const puppeteer = require("puppeteer");
 const collection = require("../../models/mongo");
 
 exports.login = async (req, res) => {
@@ -89,5 +90,44 @@ exports.checkEmailGoogleSingin = async (req, res) => {
     res.status(500).json({
       error: error,
     });
+  }
+};
+exports.downloadPdf = async (req, res) => {
+  const htmlContent = req.body.html;
+  // console.log('Received HTML:', htmlContent);
+
+  try {
+    // Launch a Puppeteer browser instance
+    // Launch Puppeteer browser
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
+
+    // Create a new page
+    const page = await browser.newPage();
+
+    // Set content
+    await page.setContent(htmlContent);
+    console.log("page is", page);
+    // Generate PDF
+    const pdfBuffer = await page.pdf({
+      format: "A4",
+      printBackground: true,
+      displayHeaderFooter: false,
+      margin: { top: 0, right: 0, bottom: 0, left: 0 },
+    });
+
+    // Close browser
+    await browser.close();
+
+    // Send PDF as response
+    res.setHeader("Content-Disposition", "attachment; filename=generated.pdf");
+    res.setHeader("Content-Type", "application/pdf");
+    res.send({ pdfBuffer: pdfBuffer });
+    console.log(pdfBuffer);
+  } catch (error) {
+    console.error("Error generating PDF:", error);
+    res.status(500).send("Error generating PDF");
   }
 };

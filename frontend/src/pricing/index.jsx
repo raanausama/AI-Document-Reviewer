@@ -5,7 +5,7 @@ import { Check } from "@mui/icons-material";
 import Cards from "./Cards";
 import { apiGet, apiPost } from "../utils/axios";
 
-export default function Pricing({ hide }) {
+export default function Pricing({ hide, token }) {
   const freeFeatures = [
     { icon: <Check />, text: "Single paper review" },
     { icon: <Check />, text: "No subscription needed" },
@@ -47,7 +47,8 @@ export default function Pricing({ hide }) {
   return (
     <>
       <Container maxWidth={false}>
-        <Grid container mt={{ xs: 3, sm: 12 }} spacing={2} mb={5}>
+        <Grid container mt={{ xs: 3, sm: 12 }} spacing={2} mb={5} display="flex"
+            justifyContent="center">
           <Grid
             item
             xs={12}
@@ -90,28 +91,27 @@ export default function Pricing({ hide }) {
             item
             gap={2}
             xs={12}
-            display="flex"
-            justifyContent="center"
             color="white"
           >
             <Typography className="animate-character4" variant="h3">
-              Chose the Right Plan for You
+              The Right Plan for You
             </Typography>
           </Grid>
           <Cards
             title="Pay as you go"
-            backgroundColor="linear-gradient(to right, #012a61, #2997f7)" // Dark Blue to Sky Blue gradient
+            backgroundColor="linear-gradient(to right, #2997f7, #012a61)" // Dark Blue to Sky Blue gradient
             textColor="#fafafa" // Light Gray text color for better contrast
-            price="$6 / paper"
+            price="$ 4.9 / paper"
             features={freeFeatures}
             buttonText="Pay"
-            titleText="Basic Document Review By AI"
-            ChipColor="linear-gradient(to right, #2997f7, #012a61)" // Sky Blue to Light Gray gradient for the chip
+            titleText="Document Review"
+            ChipColor="linear-gradient(to right, #012a61, #2997f7)" // Sky Blue to Light Gray gradient for the chip
             ChipTextColor="#FAFAFA" // Dark Blue text color for better contrast
-            amount={6}
+            amount={4.9}
+            token={token}
           />
 
-          <Cards
+          {/* <Cards
             title="Buy in bulk"
             backgroundColor="linear-gradient(to right, #2997f7, #012a61)" // Sky Blue to Light Gray gradient
             textColor="#fafafa" // Dark Blue text color
@@ -122,6 +122,7 @@ export default function Pricing({ hide }) {
             ChipColor="linear-gradient(to right, #012a61, #2997f7)" // Dark Blue to Sky Blue gradient for the chip
             ChipTextColor="#fafafa" // Light Gray text color
             amount={27}
+            token={token}
           />
 
           <Cards
@@ -135,7 +136,8 @@ export default function Pricing({ hide }) {
             ChipColor="linear-gradient(to right, #2997f7, #012a61)" // Sky Blue to Dark Blue gradient for the chip
             ChipTextColor="#fafafa" // Light Gray text color
             amount={97}
-          />
+            token={token}
+          /> */}
         </Grid>
       </Container>
     </>
