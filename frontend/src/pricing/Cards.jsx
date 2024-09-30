@@ -26,15 +26,13 @@ const Cards = ({
   ChipColor,
   ChipTextColor,
   amount,
-  token
+  token,
 }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
 
   const handlePaymentSubmission = async () => {
     setIsSubmitting(true);
-
-    
 
     const requestData = {
       // token: token, // This should be a simple string
@@ -112,7 +110,17 @@ const Cards = ({
                 </List>
                 <Divider inset='none' color='black' />
                 <CardActions>
-                  <Typography level='title-lg' sx={{ mr: "auto" }}>
+                  <Typography
+                    level='title-lg'
+                    sx={{
+                      mr: "auto",
+                      color: "#FFFA8A",
+                      boxShadow: "0px 4px 4px rgba(0.25, 0.25, 0.25, 0.25)",
+                      padding: "8px",
+                      borderRadius: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
                     {price}
                   </Typography>
                   <Button
@@ -123,7 +131,9 @@ const Cards = ({
                       background: ChipColor === "transparent" ? "" : ChipColor,
                     }}
                     disabled={isSubmitting}
-                    onClick={() => {token ? navigate("/payout") : navigate("/login")}}
+                    onClick={() => {
+                      token ? navigate("/payout") : navigate("/login");
+                    }}
                   >
                     {isSubmitting ? "Progress..." : "Pay now"}
                   </Button>

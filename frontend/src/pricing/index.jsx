@@ -47,7 +47,7 @@ export default function Pricing({ hide, token }) {
   return (
     <>
       <Container maxWidth={false}>
-        <Grid container mt={{ xs: 3, sm: 12 }} spacing={2} mb={5} display="flex"
+        <Grid container mt={{ xs: 3, sm: 8 }} spacing={2} mb={12} display="flex"
             justifyContent="center">
           <Grid
             item
@@ -56,9 +56,9 @@ export default function Pricing({ hide, token }) {
             justifyContent="center"
             color="black"
           >
-            {hide === "hide" ? null : (
+            {/* {hide === "hide" ? null : (
               <Typography sx={{color:"#2997f7"}} variant="h5">PRICING</Typography>
-            )}
+            )} */}
           </Grid>
           {/* <Grid
             item
@@ -101,10 +101,10 @@ export default function Pricing({ hide, token }) {
             title="Pay as you go"
             backgroundColor="linear-gradient(to right, #2997f7, #012a61)" // Dark Blue to Sky Blue gradient
             textColor="#fafafa" // Light Gray text color for better contrast
-            price="$ 4.9 / paper"
+            price="$ 4.9 / Paper"
             features={freeFeatures}
             buttonText="Pay"
-            titleText="Document Review"
+            titleText="Paper/Thesis Review"
             ChipColor="linear-gradient(to right, #012a61, #2997f7)" // Sky Blue to Light Gray gradient for the chip
             ChipTextColor="#FAFAFA" // Dark Blue text color for better contrast
             amount={4.9}

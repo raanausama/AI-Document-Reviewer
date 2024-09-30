@@ -21,35 +21,45 @@ function Router() {
       <Routers>
         <Routes>
           {user?.user && user?.user?.token ? (
-            <Route
-              path="/review-document"
-              element={<UploadDocument token={user?.user?.token} user={user?.user} />}
-            />,
-            <Route
-            exact
-            path="/payout"
-            element={<Payment user={user?.user} />}
-          />
+            ((
+              <Route
+                path='/review-document'
+                element={
+                  <UploadDocument token={user?.user?.token} user={user?.user} />
+                }
+              />
+            ),
+            (
+              <Route
+                exact
+                path='/payout'
+                element={<Payment user={user?.user} />}
+              />
+            ))
           ) : (
             <Route
               exact
-              path="/"
+              path='/'
               element={<Home token={user?.user?.token} />}
             />
           )}
           {/* <Route exact path="/" element={<Home token={user?.user?.token} />} /> */}
           <Route
-            path="/review-document"
-            element={<UploadDocument token={user?.user?.token} user={user?.user}/>}
+            path='/review-document'
+            element={
+              <UploadDocument token={user?.user?.token} user={user?.user} />
+            }
           />
           <Route
             exact
-            path="/"
-            element={<UploadDocument token={user?.user?.token} user={user?.user}/>}
+            path='/'
+            element={
+              <UploadDocument token={user?.user?.token} user={user?.user} />
+            }
           />
           <Route
             exact
-            path="/home"
+            path='/home'
             element={<Home token={user?.user?.token} />}
           />
           {/* <Route
@@ -57,30 +67,30 @@ function Router() {
             path="/review-document"
             element={<UploadDocument token={user?.user?.token} />}
           /> */}
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/login" element={<LogIn />} />
+          <Route exact path='/register' element={<Register />} />
+          <Route exact path='/login' element={<LogIn />} />
           <Route
-            path="/success"
-            element={<Success token={user?.user?.token} user={user?.user}/>}
+            path='/success'
+            element={<Success token={user?.user?.token} user={user?.user} />}
           />
           <Route
             exact
-            path="/what-is-reviewit"
+            path='/what-is-reviewmypaper'
             element={<WhatisreviewIT token={user?.user?.token} />}
           />
           <Route
             exact
-            path="/how-it-works"
+            path='/how-it-works'
             element={<Howitworks token={user?.user?.token} />}
           />
           <Route
             exact
-            path="/pricing"
+            path='/pricing'
             element={<Price token={user?.user?.token} />}
           />
           <Route
             exact
-            path="/faq"
+            path='/faq'
             element={<Faqs token={user?.user?.token} />}
           />
         </Routes>

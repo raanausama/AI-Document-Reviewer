@@ -21,7 +21,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import gsap from "gsap";
 // import logo from "../assets/REV. png";
 import logo from "../assets/testlogo.png";
-import logo1 from "../assets/logo1.png";
+import logo1 from "../assets/reviewmylogo.png";
 // import {styled} from '@mui/system';
 // import SignIn from "../../pages/SignIn";
 
@@ -60,14 +60,14 @@ function ResponsiveAppBar({ token }) {
 
   const pages = isSmallScreen
     ? [
-        "What is ReviewIT?",
+        "What is ReviewMyPaper?",
         "How it works?",
         "Pricing",
         "FAQ",
         token ? "Logout" : "Login",
         "Register",
       ]
-    : ["What is ReviewIT?", "How it works?", "Pricing", "FAQ"];
+    : ["What is ReviewMyPaper?", "How it works?", "Pricing", "FAQ"];
 
   const headerStyle = {
     fontFamily: "Cinzel, serif", // Use a fancy font like 'Cinzel'
@@ -82,7 +82,7 @@ function ResponsiveAppBar({ token }) {
 
   return (
     <AppBar
-      position="absolute"
+      position='absolute'
       sx={{
         backgroundColor: "transparent",
         boxShadow: "none",
@@ -91,7 +91,7 @@ function ResponsiveAppBar({ token }) {
       }}
     >
       {/* <SignIn open={viewModalOpen} handleClose={handleCloseModal} /> */}
-      <Container maxWidth="100%">
+      <Container maxWidth='100%'>
         <Toolbar disableGutters>
           {/* <AdbIcon  /> */}
           <Box
@@ -102,7 +102,7 @@ function ResponsiveAppBar({ token }) {
             }}
           >
             <Link
-              to="/"
+              to='/'
               style={{
                 textDecoration: "none",
                 display: "flex",
@@ -112,10 +112,10 @@ function ResponsiveAppBar({ token }) {
             >
               <img
                 src={logo1}
-                alt="logo"
-                style={{ height: "100px", width: "100px" }}
+                alt='logo'
+                style={{ height: "100px", width: "105px" }}
               />
-              {/* <Typography style={headerStyle}>ReviewIT</Typography> */}
+              {/* <Typography style={headerStyle}>ReviewMyPaper</Typography> */}
               {/* <Typography>Review IT</Typography> */}
             </Link>
 
@@ -131,17 +131,17 @@ function ResponsiveAppBar({ token }) {
             }}
           >
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color='inherit'
             >
               <MenuIcon sx={{ color: "black", fontWeight: "bold" }} />
             </IconButton>
             <Menu
-              id="menu-appbar"
+              id='menu-appbar'
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -171,7 +171,7 @@ function ResponsiveAppBar({ token }) {
               {pages.map((page) => (
                 <MenuItem
                   style={{
-                    background: "linear-gradient(to right, #88775d, #212223)",
+                    background: "linear-gradient(to right, #012a61, #2997f7)",
                   }}
                   key={page}
                   onClick={handleCloseNavMenu}
@@ -180,9 +180,9 @@ function ResponsiveAppBar({ token }) {
                     // If the page is "Logout", render a link to handle logout
                     <Typography
                       onClick={handleLogout}
-                      textAlign="center"
-                      fontFamily="Aktiv"
-                      color="#e9e9e9"
+                      textAlign='center'
+                      // fontFamily='Aktiv'
+                      color='#e9e9e9'
                     >
                       {page}
                     </Typography>
@@ -193,9 +193,9 @@ function ResponsiveAppBar({ token }) {
                       style={{ textDecoration: "none", color: "inherit" }}
                     >
                       <Typography
-                        textAlign="center"
-                        fontFamily="Aktiv"
-                        color="#e9e9e9"
+                        textAlign='center'
+                        // fontFamily='Aktiv'
+                        color='#e9e9e9'
                       >
                         {page}
                       </Typography>

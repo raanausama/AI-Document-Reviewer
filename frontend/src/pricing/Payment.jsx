@@ -2,8 +2,8 @@ import { Stack, Grid, Container, Typography } from "@mui/material";
 import StripeContainer from "./StripeContainer";
 
 /* eslint-disable */
-const Payment = ({user}) => {
-  console.log('user in payment', user)
+const Payment = ({ user }) => {
+  console.log("user in payment", user);
 
   const headerStyle = {
     fontFamily: "Cinzel, serif", // Use a fancy font like 'Cinzel'
@@ -36,7 +36,7 @@ const Payment = ({user}) => {
                 color={"black"}
                 style={headerStyle}
               >
-                ReviewIT
+                ReviewMyPaper
               </Typography>
               <StripeContainer />
             </Stack>
