@@ -1,7 +1,6 @@
 // import React, { useEffect } from 'react';
 // import { Box, CircularProgress, LinearProgress, Typography } from '@mui/material';
 // import './../index.css'
- 
 
 // // const headerStyle = {
 // //   fontFamily: 'Cinzel, serif',
@@ -65,7 +64,7 @@
 //                   marginBottom: "1rem",
 //                 }}
 //               >
-//                 ReviewIT
+//                 ReviewMyPaper
 //               </Typography>
 //       <LinearProgress color="inherit" sx={{ color: '#cbbaa8', width: '10%' }} />
 //     </Box>
@@ -74,32 +73,32 @@
 
 // export default LazyLoader;
 
-import React from 'react';
-import { Box, LinearProgress } from '@mui/material';
-import './../index.css';
-import logo from "./../assets/Review it lazyloader.gif"
+import React from "react";
+import { Box, LinearProgress } from "@mui/material";
+import "./../index.css";
+import logo from "./../assets/Review it gif.gif";
 
 const LazyLoader = () => {
   return (
     <Box
       sx={{
-        position: 'fixed',
+        position: "fixed",
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'white',
+        width: "100%",
+        height: "100%",
+        backgroundColor: "white",
         zIndex: 1300,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
       }}
     >
       <img
         src={logo}
-        alt="Loading Logo"
-        style={{ width: '300px', height: '300px' }} // Adjust size as needed
+        alt='Loading Logo'
+        style={{ width: "300px", height: "300px" }} // Adjust size as needed
       />
       {/* <LinearProgress color="inherit" sx={{ color: '#cbbaa8', width: '20%' }} /> */}
     </Box>

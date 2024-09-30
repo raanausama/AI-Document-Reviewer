@@ -94,7 +94,6 @@ exports.checkEmailGoogleSingin = async (req, res) => {
 };
 exports.downloadPdf = async (req, res) => {
   const htmlContent = req.body.html;
-  // console.log('Received HTML:', htmlContent);
 
   try {
     // Launch a Puppeteer browser instance

@@ -26,7 +26,7 @@ import { useState } from "react";
 import * as Yup from "yup";
 import Iconify from "../components/Iconify";
 import { apiPost } from "../utils/axios";
-import logo from "./../assets/logo2.png";
+import logo from "./../assets/reviewmylogo.png";
 import Swal from "sweetalert2";
 
 // TODO remove, this demo shouldn't need to reset the theme.
@@ -88,8 +88,7 @@ export default function SignInForm({ navigate, dispatch }) {
             Swal.fire({
               icon: "success",
               title: "You are successfully Sign In",
-              background:
-                "linear-gradient(to right, #012a61, #2997f7)",
+              background: "linear-gradient(to right, #012a61, #2997f7)",
               color: "white",
               confirmButtonColor: "#012a61",
             }).then(() => {
@@ -101,8 +100,7 @@ export default function SignInForm({ navigate, dispatch }) {
               icon: "error",
               title: "Invalid credentails!",
               text: "error",
-              background:
-                "linear-gradient(to right, #012a61, #2997f7)",
+              background: "linear-gradient(to right, #012a61, #2997f7)",
               color: "white",
               confirmButtonColor: "#012a61",
             }).then(() => {});
@@ -147,9 +145,9 @@ export default function SignInForm({ navigate, dispatch }) {
         //               width: isSmallScreen ? "25vh" : "25vh",
         //             }}
         //           /> */}
-        //       <Typography style={headerStyle}>ReviewIT</Typography>
+        //       <Typography style={headerStyle}>ReviewMyPaper</Typography>
         //     </a>
-        //     {/* <Typography variant="h5" sx={{fontWeight: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
+        //     {/* <Typography variant="h5" sx={{ReviewMyPaperht: 'bold',}}>𝓡𝓔𝓥𝓘𝓔𝓦 𝓘𝓣</Typography> */}
         //   </Box>
         //   <Box
         //     sx={{
@@ -300,7 +298,7 @@ export default function SignInForm({ navigate, dispatch }) {
         //   </Box>
         //   {/* <Copyright sx={{ mt: 5 }} /> */}
         // </Container>
-        <Container component="main" maxWidth="xs">
+        <Container component='main' maxWidth='xs'>
           <CssBaseline />
           <Box
             sx={{
@@ -309,17 +307,17 @@ export default function SignInForm({ navigate, dispatch }) {
               alignItems: "center",
               justifyContent: "center",
             }}
-            mt={5}
+            mt={2}
           >
-            <a href="/">
-              {/* <Typography style={headerStyle}>ReviewIT</Typography> */}
-              <img src= {logo} width={"120px"} height={"80px"}/>
+            <a href='/'>
+              {/* <Typography style={headerStyle}>ReviewMyPaper</Typography> */}
+              <img src={logo} width={"160px"} height={"160px"} />
             </a>
           </Box>
 
           <Box
             sx={{
-              marginTop: 4,
+              // marginTop: 1,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -328,11 +326,11 @@ export default function SignInForm({ navigate, dispatch }) {
               borderRadius: "20px",
             }}
           >
-            <Typography component="h1" variant="h5">
+            <Typography component='h1' variant='h5'>
               Login
             </Typography>
             <Box
-              component="form"
+              component='form'
               noValidate
               onSubmit={handleSubmit}
               sx={{ mt: 3 }}
@@ -340,11 +338,11 @@ export default function SignInForm({ navigate, dispatch }) {
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <TextField
-                    name="email"
-                    size="medium"
-                    id="outlined-register-2"
-                    label="Email"
-                    variant="outlined"
+                    name='email'
+                    size='medium'
+                    id='outlined-register-2'
+                    label='Email'
+                    variant='outlined'
                     fullWidth
                     helperText={touched.email && errors.email}
                     required
@@ -355,24 +353,24 @@ export default function SignInForm({ navigate, dispatch }) {
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    size="medium"
-                    id="outlined-12"
-                    label="Password"
-                    variant="outlined"
+                    size='medium'
+                    id='outlined-12'
+                    label='Password'
+                    variant='outlined'
                     helperText={touched.password && errors.password}
                     required
                     error={Boolean(touched.password && errors.password)}
                     fullWidth
-                    name="password"
+                    name='password'
                     type={showPassword ? "text" : "password"}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     InputProps={{
                       endAdornment: (
-                        <InputAdornment position="end">
+                        <InputAdornment position='end'>
                           <IconButton
                             onClick={() => setShowPassword(!showPassword)}
-                            edge="end"
+                            edge='end'
                           >
                             <Iconify
                               icon={
@@ -391,9 +389,9 @@ export default function SignInForm({ navigate, dispatch }) {
 
               <LoadingButton
                 fullWidth
-                size="large"
-                type="submit"
-                variant="contained"
+                size='large'
+                type='submit'
+                variant='contained'
                 loading={isSubmitting}
                 onClick={handleSubmit}
                 sx={{
@@ -407,12 +405,12 @@ export default function SignInForm({ navigate, dispatch }) {
                 Login
               </LoadingButton>
 
-              <Grid container justifyContent="flex-end">
+              <Grid container justifyContent='flex-end'>
                 <Grid item>
                   <Link
                     style={{ cursor: "pointer" }}
-                    variant="subtitle2"
-                    underline="hover"
+                    variant='subtitle2'
+                    underline='hover'
                     onClick={() => navigate("/forgot-password")}
                   >
                     Forgot password?
@@ -421,11 +419,11 @@ export default function SignInForm({ navigate, dispatch }) {
               </Grid>
 
               <Divider sx={{ my: 3 }}>
-                <Typography variant="body2">OR</Typography>
+                <Typography variant='body2'>OR</Typography>
               </Divider>
 
               <Stack
-                direction="column"
+                direction='column'
                 spacing={1}
                 sx={{
                   marginBottom: "20px !important",
@@ -433,18 +431,18 @@ export default function SignInForm({ navigate, dispatch }) {
                 }}
               >
                 <Button
-                  variant="contained"
+                  variant='contained'
                   sx={{ textTransform: "none", bgcolor: "#fafafa" }} // Light Gray button background
                   fullWidth
                   onClick={() => {
                     signInWithGoogle(navigate, dispatch);
                   }}
-                  size="large"
-                  color="inherit"
+                  size='large'
+                  color='inherit'
                   startIcon={
                     <Iconify
-                      icon="eva:google-fill"
-                      color="#DF3E30"
+                      icon='eva:google-fill'
+                      color='#DF3E30'
                       width={22}
                       height={22}
                     />

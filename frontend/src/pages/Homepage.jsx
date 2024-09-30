@@ -39,7 +39,8 @@ function Homepage({ token }) {
           height: "100vh", // Full height of the viewport
         }}
       >
-        <CircularProgress size={"4rem"} sx={{ color: "#012a61" }} /> {/* Circular loader */}
+        <CircularProgress size={"4rem"} sx={{ color: "#012a61" }} />{" "}
+        {/* Circular loader */}
       </Box>
     );
   }
@@ -55,10 +56,10 @@ function Homepage({ token }) {
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Grid item xs={12} sx={{ position: "relative", textAlign: "left",  }}>
+          <Grid item xs={12} sx={{ position: "relative", textAlign: "left" }}>
             <img
               src={Banner}
-              alt="Hero Image"
+              alt='Hero Image'
               style={{
                 width: "100%",
                 height: isSmallScreen ? "50vh" : "auto",
@@ -78,8 +79,8 @@ function Homepage({ token }) {
               }}
             >
               <Typography
-                className="animate-character4"
-                variant="h2"
+                className='animate-character4'
+                variant='h2'
                 sx={{
                   fontSize: {
                     xs: "1.4rem",
@@ -91,10 +92,10 @@ function Homepage({ token }) {
                   marginBottom: "1rem",
                 }}
               >
-                ReviewIT
+                ReviewMyPaper
               </Typography>
               <Typography
-                variant="h6"
+                variant='h6'
                 sx={{
                   fontSize: {
                     xs: "0.7rem",
@@ -109,11 +110,11 @@ function Homepage({ token }) {
               >
                 Peer Review your research paper and Increase the chances of your
                 paper acceptance{" "}
-                <span className="animate-character4">by 50%</span>
+                <span className='animate-character4'>by 50%</span>
               </Typography>
               {!isSmallScreen && (
                 <Typography
-                  variant="h6"
+                  variant='h6'
                   sx={{
                     fontSize: {
                       xs: "1.2rem",
@@ -125,8 +126,8 @@ function Homepage({ token }) {
                     color: "#fafafa",
                   }}
                 >
-                  ReviewIT helps you identify the strengths and weaknesses of
-                  your paper before you submit it to a journal or conference.
+                  ReviewMyPaper helps you identify the strengths and weaknesses
+                  of your paper before you submit it to a journal or conference.
                 </Typography>
               )}
               <Stack
@@ -135,7 +136,7 @@ function Homepage({ token }) {
                 mt={2}
               >
                 <Button
-                  variant="contained"
+                  variant='contained'
                   sx={{
                     background: "#012a61",
                     color: "white",
@@ -163,13 +164,13 @@ function Homepage({ token }) {
                     },
                   }}
                   onClick={() => {
-                    navigate("/review-document" );
+                    navigate("/review-document");
                   }}
                 >
                   Get Started
                 </Button>
                 <Button
-                  variant="contained"
+                  variant='contained'
                   endIcon={<ArrowForwardIcon />}
                   sx={{
                     color: "white",
@@ -199,7 +200,7 @@ function Homepage({ token }) {
                     display: { xs: "none", sm: "flex" },
                   }}
                   onClick={() => {
-                    navigate("/what-is-reviewit");
+                    navigate("/what-is-reviewmypaper");
                   }}
                 >
                   Learn More
